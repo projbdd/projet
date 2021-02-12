@@ -36,7 +36,7 @@ if (isset($_POST['BTN_OK'])) // le bouton Accès site a été activé
 						}
 						else{
 							echo "BRAVO DM ",htmlspecialchars($_POST['utilisateur'])," ! <br /> \n";
-						    echo "<a href='xxx.html'> Accéder au site </a> ";
+						    echo "<a href='EspaceDataM.html'> Accéder au site </a> ";
 							
 							
 						}
@@ -52,25 +52,6 @@ if (isset($_POST['BTN_OK'])) // le bouton Accès site a été activé
 
 		$req->closeCursor() ;
 	} 
-else if (isset($_POST['BTN_DEL']))  // le bouton suppression de l'utilisateur est activé
-	{ // définition de la requête - les paramètres sont identifiés ; on n'a pas besoin de gérer les guillemets -
-		$req = $bdd->prepare('delete from tab_utilisateur where user= :p_user');
-		// exécution de la requête
-		$req->execute(array(':p_user' => $_POST['utilisateur']));
-		if ($req) 	{	echo "L'utilisateur ".htmlspecialchars($_POST['utilisateur'])." a bien été supprimé.";
-						echo "<a href='motpasse.html'> Retour </a> ";
-					}
-	}
-else if (isset($_POST['BTN_AJ']))  // le bouton suppression de l'utilisateur est activé
-	{ // définition de la requête - les paramètres sont identifiés ; on n'a pas besoin de gérer les guillemets -
-		$req = $bdd->prepare('insert into tab_utilisateur values (:p_user , :p_mdp)');
-		// exécution de la requête
-		$req->execute(array(':p_user' => $_POST['utilisateur'] , 
-							':p_mdp' => $_POST['motpasse']));
-		if ($req) 	{	echo "L'utilisateur ".htmlspecialchars($_POST['utilisateur'])." a bien été ajouté.";
-						echo "<a href='motpasse.html'> Retour </a> ";
-					}
-	}					
 
 ?>
 </body>
