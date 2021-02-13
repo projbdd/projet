@@ -13,12 +13,6 @@
 <div class="navbar">
     <a href="motpasse_corrigé.html">Déconnexion</a>
     <div class="dropdown">
-    <button class="dropbtn">Mon compte
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content">
-      <a href="Infos_DM.php">Mes informations</a>
-    </div>
   </div>
 </div>
 
@@ -27,7 +21,7 @@
 
     <?php
         // Connexion  à la base de données
-        include("connexion_bd.php");
+        include("connexion_bd_projet.php");
 
         if ($_SESSION['info'] == 'Mot de passe') {
 
@@ -39,19 +33,19 @@
             $ligne = $req -> fetch();
 
             if ($ligne) { // Vérifier si l'utilisateur a bien été trouvé
-                if ($ligne['Mdp']==$_POST['old']) {
-                    if ($_POST['new'] == $_POST['confirm']) {
+                if (htmlspecialchars($ligne['Mdp']) == htmlspecialchars($_POST['old'])) {
+                    if (htmlspecialchars($_POST['new']) == htmlspecialchars($_POST['confirm'])) {
                         $req2 = $bdd -> prepare("update tab_utilisateurs
                         set Mdp = :p_mdp
                         where ID_user = :p_user");
                         
-                        $req2 -> execute(array(':p_user' => $_SESSION['ID'], ':p_mdp' => $_POST['new']));
+                        $req2 -> execute(array(':p_user' => $_SESSION['ID'], ':p_mdp' => htmlspecialchars($_POST['new'])));
 
-                        echo "Le mot de passe de ".$_SESSION['prenom']." ".$_SESSION['nom']," a bien été changé. </br>";
+                        echo "</br> Le mot de passe de ".$_SESSION['prenom']." ".$_SESSION['nom']," a bien été changé. </br>";
                         echo '<a href = "EspaceDataM.php"/>Retour</a>';
 
                     } else { 
-                        echo "Les deux mots de passe doivent être identiques.</br>";
+                        echo "</br> Les deux mots de passe doivent être identiques.</br>";
                         echo '<a href = "EspaceDataM.php"/>Réessayer</a>';
                     }
                 } else { 
@@ -59,7 +53,42 @@
                     echo '<a href = "EspaceDataM.php"/>Réessayer</a>';
                 }
             } else { 
-                echo "Cet utilisateur n'a pas été trouvé.</br>";
+                echo "</br> Cet utilisateur n'a pas été trouvé.</br>";
+                echo '<a href = "EspaceDataM.php"/>Réessayer</a>';
+            };
+
+            $req->closeCursor() ;
+
+        } else if ($_SESSION['info'] == 'Type') {
+
+            // Définition et stockage des paramètres de la requête dans un tableau 
+            $req = $bdd -> prepare('select Type from tab_utilisateurs where ID_user = :p_user');
+            $req->execute(array(':p_user' => $_SESSION['ID']));
+
+            // Récupération des données de la première ligne de la requête
+            $ligne = $req -> fetch();
+
+            if ($ligne) { // Vérifier si l'utilisateur a bien été trouvé
+                if (htmlspecialchars($_POST['new']) == htmlspecialchars($_POST['old'])) {
+                        
+                    echo "</br> Veuillez modifier la fonction.</br>";
+                    echo '<a href = "EspaceDataM.php"/>Réessayer</a>';
+
+                } else { 
+                        
+                    $req2 = $bdd -> prepare("update tab_utilisateurs
+                    set Type = :p_type
+                    where ID_user = :p_user");
+                        
+                    $req2 -> execute(array(':p_user' => $_SESSION['ID'], ':p_type' => htmlspecialchars($_POST['new'])));
+
+                    echo "</br> La fonction de ".$_SESSION['prenom']." ".$_SESSION['nom']," a bien été changée. </br>";
+                    echo '<a href = "EspaceDataM.php"/>Retour</a>';
+                }
+
+            } else { 
+                
+                echo "</br> Cet utilisateur n'a pas été trouvé.</br>";
                 echo '<a href = "EspaceDataM.php"/>Réessayer</a>';
             };
 
@@ -75,13 +104,13 @@
             $ligne = $req -> fetch();
 
             if ($ligne) { // Vérifier si l'utilisateur a bien été trouvé
-                if ($ligne[0] == $_POST['old']) {
-                    if ($_POST['new'] == $_POST['confirm']) {
+                if (htmlspecialchars($ligne[0]) == htmlspecialchars($_POST['old'])) {
+                    if (htmlspecialchars($_POST['new']) == htmlspecialchars($_POST['confirm'])) {
                         $req2 = $bdd -> prepare("update tab_utilisateurs
                         set ".$_SESSION['info']." = :p_new
                         where ID_user = :p_user");
                         
-                        $req2 -> execute(array(':p_user' => $_SESSION['ID'], ':p_new' => $_POST['new']));
+                        $req2 -> execute(array(':p_user' => $_SESSION['ID'], ':p_new' => htmlspecialchars($_POST['new'])));
 
                         echo "</br> Le ".$_SESSION['info']." a bien été changé. </br>";
                         echo '<a href = "EspaceDataM.php"/>Retour</a>';

@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8" />
 		<title> Supprimer un utilisateur </title>
-        <link rel="stylesheet" media="screen" href="feuille_style.css">
+    <link rel="stylesheet" media="screen" href="feuille_style.css">
 	</head>
 
 <body>
@@ -13,12 +13,6 @@
 <div class="navbar">
     <a href="motpasse_corrigé.html">Déconnexion</a>
     <div class="dropdown">
-    <button class="dropbtn">Mon compte
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content">
-      <a href="Infos_DM.php">Mes informations</a>
-    </div>
   </div>
 </div>
 
@@ -28,10 +22,10 @@
     <?php
 
         // Connexion à la base de données
-        include("connexion_bd.php");
+        include("connexion_bd_projet.php");
 
         // On sauvegarde cette valeur pour la page d'après
-        $_SESSION['del_user'] = $_POST['del_user'];
+        $_SESSION['del_user'] = htmlspecialchars($_POST['del_user']);
 
         // Pour avoir un message de confirmation
         $conf = "SELECT Nom, Prenom FROM tab_utilisateurs WHERE ID_user = '".$_SESSION['del_user']."'";
@@ -40,7 +34,7 @@
 
         if($message) {
             while($message) {
-                echo "</br>".$message['Prenom']." ".$message['Nom']." n'aura plus accès au site et à ses fonctionnalités. Voulez-vous continuer? </br></br>";
+                echo "</br>".htmlspecialchars($message['Prenom'])." ".htmlspecialchars($message['Nom'])." n'aura plus accès au site et à ses fonctionnalités. Voulez-vous continuer? </br></br>";
                 $message = $affiche -> fetch();
             }
 

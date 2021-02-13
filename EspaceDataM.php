@@ -28,7 +28,7 @@
                         Nom <input name = "nomMed"><br><br>
                         Prénom <input name = "prenomMed"><br><br>
                         Téléphone <input name = "telMed"><br><br>
-                        Age <input name = "ageMed" type ="number" min="0"><br><br><br>
+                        Age <input name = "ageMed" type ="number" min="0" max="9999999999"><br><br><br>
                         <b>Création de son espace personnel </b></br><br>
                         Type d'utilisateur <select name = "typeMed">
                             <option> Médecin </option>

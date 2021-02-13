@@ -31,13 +31,13 @@
         $max = $resultat -> fetch();
 
         // Pour rajouter un utilisateur de type médecin
-        if htmlspecialchars($_POST['typeMed'] == 'Médecin') {
+        if ($_POST['typeMed'] == 'Médecin') {
             
             // Requête pour ajout
             $req = $bdd -> prepare('insert into tab_utilisateurs values (:p_prof, :p_nom, :p_prenom, :p_age, :p_tel, :p_user, :p_mdp, :p_type)');
 
             // Exécution de la requête
-            $req -> execute(array(':p_prof' => $max[0], ':p_nom' => $_POST['nomMed'], ':p_prenom' => $_POST['prenomMed'], ':p_age' => $_POST['ageMed'], ':p_tel' => $_POST['telMed'], ':p_user' => $_POST['ID'], ':p_mdp' => $_POST['pwd'], 'p_type' => 'Med'));
+            $req -> execute(array(':p_prof' => $max[0], ':p_nom' => htmlspecialchars($_POST['nomMed']), ':p_prenom' => htmlspecialchars($_POST['prenomMed']), ':p_age' => htmlspecialchars($_POST['ageMed']), ':p_tel' => htmlspecialchars($_POST['telMed']), ':p_user' => htmlspecialchars($_POST['ID']), ':p_mdp' => htmlspecialchars($_POST['pwd']), 'p_type' => 'Med'));
 
             if ($req != null) {
                 echo "</br> Nouvel utilisateur ".htmlspecialchars($_POST['prenomMed'])." ".htmlspecialchars($_POST['nomMed'])." rajouté avec succès. </br>";
@@ -54,7 +54,7 @@
             $req = $bdd -> prepare('insert into tab_utilisateurs values (:p_prof, :p_nom, :p_prenom, :p_age, :p_tel, :p_user, :p_mdp, :p_type)');
 
             // Exécution de la requête
-            $req -> execute(array(':p_prof' => $max[0], ':p_nom' => $_POST['nomMed'], ':p_prenom' => $_POST['prenomMed'], ':p_age' => $_POST['ageMed'], ':p_tel' => $_POST['telMed'], ':p_user' => $_POST['ID'], ':p_mdp' => $_POST['pwd'], 'p_type' => 'DM'));
+            $req -> execute(array(':p_prof' => $max[0], ':p_nom' => htmlspecialchars($_POST['nomMed']), ':p_prenom' => htmlspecialchars($_POST['prenomMed']), ':p_age' => htmlspecialchars($_POST['ageMed']), ':p_tel' => htmlspecialchars($_POST['telMed']), ':p_user' => htmlspecialchars($_POST['ID']), ':p_mdp' => htmlspecialchars($_POST['pwd']), 'p_type' => 'DM'));
 
             if ($req != null) {
                 echo "</br> Nouvel utilisateur ".htmlspecialchars($_POST['prenomMed']). " ".htmlspecialchars($_POST['nomMed'])." rajouté avec succès. </br>";

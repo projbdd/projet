@@ -13,12 +13,6 @@
 <div class="navbar">
     <a href="motpasse_corrigé.html">Déconnexion</a>
     <div class="dropdown">
-    <button class="dropbtn">Mon compte
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content">
-      <a href="Infos_DM.php">Mes informations</a>
-    </div>
   </div>
 </div>
 
@@ -28,7 +22,7 @@
     <?php
 
         // Connexion  à la base de données
-        include("connexion_bd.php");
+        include("connexion_bd_projet.php");
 
         // Définition et stockage des paramètres de la requête dans un tableau 
         $req = $bdd -> prepare("select Type from tab_utilisateurs where ID_user = :p_user");
