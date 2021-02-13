@@ -32,7 +32,8 @@ if (isset($_POST['BTN_OK'])) // le bouton Accès site a été activé
 				echo "BRAVO doc ",htmlspecialchars($_POST['utilisateur'])," ! <br /> \n";
 				echo "<a href='accueil.html'> Accéder au site </a> ";
 				//Pour limiter les accès de l'utilisateur 
-				$_SESSION['ID_utilisateur'] = $ligne['ID_prof'];							
+				$_SESSION['ID_utilisateur'] = $ligne['ID_prof'];
+				echo "<a href='motpasse_corrigé.html'> <= Page précédante </a> <br /> \n"; 
 			}
 			
 			else
