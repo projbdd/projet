@@ -11,7 +11,7 @@
 
 include("connexion_bd.php");
 
-//le bouton Valider été activé
+//le bouton Valider a été activé
 if (isset($_POST['BTN_PAT'])) 
 	{
 		echo "Vous avez selectionner le patient : "." ".$_POST['numdoss']."<br />";
@@ -19,12 +19,12 @@ if (isset($_POST['BTN_PAT']))
 		$_SESSION['numerodoss'] = htmlspecialchars($_POST['numdoss']); 
 		
 	} 
-// le bouton d'ajout d'un l'utilisateur est activé
+// le bouton Ajout d'un l'utilisateur est activé
 else if (isset($_POST['BTN_AJT']))  
 	{	
 		echo "<a href='xxxxx.html'> Ajouter un utilisateur </a> ";
 	}
-// ajout ou nom d'un utilisateur 
+// ajout ou nom d'un utilisateur ????
 
 ?>
 
