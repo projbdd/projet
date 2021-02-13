@@ -24,7 +24,7 @@ else if (isset($_POST['BTN_AJT']))
 	{	
 		echo "<a href='xxxxx.html'> Ajouter un utilisateur </a> ";
 	}
-// ajout ou nom d'un utilisateur ????
+// ajout ou non d'un utilisateur ????
 
 ?>
 
