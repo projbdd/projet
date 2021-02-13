@@ -24,13 +24,13 @@ $requete -> execute(array(':p_numdossier' => $_SESSION['numerodoss']));
         <?php
         $jour = $requete->fetch();
         while ($jour)
-        	{	
-        		foreach($jour as $item)
-        			{
-            			echo "<option value=".$jour['Date'].">".$jour['Date']."</option>";
-            			$jour = $requete->fetch();
-        			}
+        {	
+        	foreach($jour as $item)
+        	{
+            		echo "<option value=".$jour['Date'].">".$jour['Date']."</option>";
+            		$jour = $requete->fetch();
         	}
+        }
 
         ?>
         
