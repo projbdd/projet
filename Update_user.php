@@ -27,7 +27,7 @@
 
     <?php
         // Connexion  à la base de données
-        include("connexion_bd_projet.php");
+        include("connexion_bd.php");
 
         if ($_SESSION['info'] == 'Mot de passe') {
 
