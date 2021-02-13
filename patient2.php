@@ -7,15 +7,12 @@
 <body>
 
 <?php 
-$_SESSION['numerodoss']= htmlspecialchars($_POST['numdoss']); 
-
 
 include("connexion_bd.php");
 
-
-echo "Quelle visite du patient ",htmlspecialchars($_POST['numdoss'])," souhaitez-vous consulter ? <br /> \n";
-$requete = $bdd -> ('select Date from tab_suivi where N_dossier= :p_numdossier');
-$requete -> execute(array(':p_numdossier' => $_POST['numdoss']));
+echo "Quelle visite du patient ".$_SESSION['numerodoss']." souhaitez-vous consulter ? <br /> \n";
+$requete = $bdd ->prepare('select Date from tab_suivi where N_dossier= :p_numdossier');
+$requete -> execute(array(':p_numdossier' => $_SESSION['numerodoss']));
 	
 ?>
 
