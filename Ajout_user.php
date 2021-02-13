@@ -13,12 +13,6 @@
 <div class="navbar">
     <a href="motpasse_corrigé.html">Déconnexion</a>
     <div class="dropdown">
-    <button class="dropbtn">Mon compte
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content">
-      <a href="Infos_DM.php">Mes informations</a>
-    </div>
   </div>
 </div>
 
@@ -37,7 +31,7 @@
         $max = $resultat -> fetch();
 
         // Pour rajouter un utilisateur de type médecin
-        if ($_POST['typeMed'] == 'Médecin') {
+        if htmlspecialchars($_POST['typeMed'] == 'Médecin') {
             
             // Requête pour ajout
             $req = $bdd -> prepare('insert into tab_utilisateurs values (:p_prof, :p_nom, :p_prenom, :p_age, :p_tel, :p_user, :p_mdp, :p_type)');
