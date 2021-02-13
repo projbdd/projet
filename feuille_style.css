@@ -58,6 +58,15 @@
   text-align: left;
 }
 
+table {
+    vertical-align: middle;
+	horizontal-align: middle;
+    border-spacing: 100px 4rem; ;
+    margin: auto;
+    margin: auto }
+	
+
+
 /* Add a grey background color to dropdown links on hover */
 .dropdown-content a:hover {
   background-color: #ddd;
