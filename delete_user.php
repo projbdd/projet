@@ -28,7 +28,7 @@
     <?php
 
         // Connexion  à la base de données
-        include("connexion_bd_projet.php");
+        include("connexion_bd.php");
 
         // Définition et stockage des paramètres de la requête dans un tableau 
         $req = $bdd -> prepare("select Type from tab_utilisateurs where ID_user = :p_user");
