@@ -74,7 +74,7 @@ include("connexion_bd.php");
 			<option value="3">Avérée</option>
 		</select></br></br>
 		<input type = "submit" value = "Ajouter ce patient"/></br>
-	<fieldset>
+	</fieldset>
 </form>
 
 
