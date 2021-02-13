@@ -1,4 +1,7 @@
-<?php  session_start(); ?>
+<?php  session_start(); 
+
+
+?>
 
 <!DOCTYPE html>
 <html>
@@ -13,6 +16,7 @@
 <?php
 
 include("connexion_bd.php");
+
 
 // Requete qui cherche toutes les informations des patients traités par le medecin utilisateur 
 $req = $bdd -> prepare('SELECT tab_patient.* FROM tab_suivi 
@@ -42,12 +46,23 @@ $req->execute(array(':ID_utilisateur' => $_SESSION['ID_utilisateur']));
     </select>
     <table>
 	<tr><td> <input type = "submit" name = "BTN_PAT" value = "VALIDER"></td></tr>
-    	<tr><td> <input type = "submit" name = "BTN_AJT" value = "AJOUT D'UN NOUVEU PATIENT"></td></tr>
-    </table> 
+    <tr><td> <input type = "submit" name = "BTN_AJT" value = "AJOUT D'UN NOUVEU PATIENT"></td></tr>
+	</table> 
     
 </form>
+
+<br/> <a href="accueil.html"> Page d'accueil </a>
+
+<!--
+<?php
+//TEST
+echo "<br /> TEST- ID_UTILISATEUR :". $_SESSION['ID_utilisateur'];
+?>
+-->
 
 
 </body>
 </html>
+
+
 
