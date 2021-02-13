@@ -28,7 +28,7 @@
     <?php
 
         // Connexion à la base de données
-        include("connexion_bd_projet.php");
+        include("connexion_bd.php");
 
         // On sauvegarde cette valeur pour la page d'après
         $_SESSION['del_user'] = $_POST['del_user'];
