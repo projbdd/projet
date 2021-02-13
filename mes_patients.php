@@ -36,6 +36,8 @@ $req->execute(array(':ID_utilisateur' => $_SESSION['ID_utilisateur']));
             			$ligne = $req->fetch();
         			}
         	}
+        $req->closeCursor() ;
+        
         ?>
     </select>
     <table>
