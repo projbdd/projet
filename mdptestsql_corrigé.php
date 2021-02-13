@@ -39,7 +39,7 @@ if (isset($_POST['BTN_OK'])) // le bouton Accès site a été activé
 			else
 			{
 				echo "BRAVO DM ",htmlspecialchars($_POST['utilisateur'])," ! <br /> \n";
-				echo "<a href='EspaceDataM.html'> Accéder au site </a> ";
+				echo "<a href='EspaceDataM.php'> Accéder au site </a> ";
 			}
 		} 
 			
