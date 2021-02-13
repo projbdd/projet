@@ -26,7 +26,7 @@
 	<?php 
 
 		// Connexion à la base de données
-		include("connexion_bd_projet.php");
+		include("connexion_bd.php");
 
 		// On stocke l'information a modifier pour l'utiliser dans le fichier PHP correspondant au formulaire qui suit
 		$_SESSION['info'] = $_POST['selec']; 
