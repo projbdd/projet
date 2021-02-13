@@ -25,7 +25,7 @@
     <?php
 
         // connexion  à la base de données
-        include("connexion_bd_projet.php");
+        include("connexion_bd.php");
 
         // Définition d'une requête pour implémenter la variable ID_prof de la tab_utilisateurs (qui n'est pas renseignée dans le formulaire)
         $prof = "SELECT max(ID_prof)+1 FROM tab_utilisateurs";
