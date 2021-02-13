@@ -30,9 +30,7 @@ if (isset($_POST['BTN_OK'])) // le bouton Accès site a été activé
 			if ($ligne["Type"]=="Med")
 			{
 				echo "BRAVO doc ",htmlspecialchars($_POST['utilisateur'])," ! <br /> \n";
-				
-				// NOTE GRACE : Accès temporaire - surement besoin d'un page intermédiaire 
-				echo "<a href='mes_patients.php'> Accéder au site </a> ";
+				echo "<a href='acceuil.html'> Accéder au site </a> ";
 				//Pour limiter les accès de l'utilisateur 
 				$_SESSION['ID_utilisateur'] = $ligne['ID_prof'];							
 			}
