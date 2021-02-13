@@ -42,8 +42,8 @@ $req->execute(array(':ID_utilisateur' => $_SESSION['ID_utilisateur']));
     </select>
     <table>
 	<tr><td> <input type = "submit" name = "BTN_PAT" value = "VALIDER"></td></tr>
-    <tr><td> <input type = "submit" name = "BTN_AJT" value = "AJOUT D'UN NOUVEU PATIENT"></td></tr>
-	</table> 
+    	<tr><td> <input type = "submit" name = "BTN_AJT" value = "AJOUT D'UN NOUVEU PATIENT"></td></tr>
+    </table> 
     
 </form>
 
