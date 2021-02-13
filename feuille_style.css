@@ -68,5 +68,9 @@
   display: block;
 }
 
-
+table {
+    vertical-align: middle;
+    border-spacing: 100px 4rem; ;
+    margin: auto;
+    margin: auto }
 	
