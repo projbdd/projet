@@ -4,28 +4,32 @@
 <head>
 	<meta charset="utf-8" />	
 	<title> Ajout d'un utilisateur </title>
+    <link rel="stylesheet" media="screen" href="feuille_style.css">
 </head>
 
-<!-- Reste de la page-->
 <body>
 
-    <!-- Partie du haut -->
-    <div class="navbar">
-        <a href="motpasse_corrigé.html">Déconnexion</a>
-        <div class="dropdown">
-        <button class="dropbtn">Mon compte
-          <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="dropdown-content">
-          <a href="Infos_DM.php">Mes informations</a>
-        </div>
-      </div>
+<!-- Partie du haut -->
+<div class="navbar">
+    <a href="motpasse_corrigé.html">Déconnexion</a>
+    <div class="dropdown">
+    <button class="dropbtn">Mon compte
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="Infos_DM.php">Mes informations</a>
     </div>
-  
+  </div>
+</div>
+
+    
+<!-- Reste de la page-->
+<div class = "main">
+
     <?php
 
         // connexion  à la base de données
-        include("connexion_bd.php");
+        include("connexion_bd_projet.php");
 
         // Définition d'une requête pour implémenter la variable ID_prof de la tab_utilisateurs (qui n'est pas renseignée dans le formulaire)
         $prof = "SELECT max(ID_prof)+1 FROM tab_utilisateurs";
@@ -67,6 +71,7 @@
         }
     
     ?>
+</div>
 
 </body>
 </html>
