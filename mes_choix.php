@@ -19,12 +19,12 @@ if (isset($_POST['BTN_PAT']))
 		$_SESSION['numerodoss'] = htmlspecialchars($_POST['numdoss']); 
 		
 	} 
-// le bouton Ajout d'un uilisateur est activé
+// le bouton Ajout d'un patient est activé
 else if (isset($_POST['BTN_AJT']))  
 	{	
-		echo "<a href='xxxxx.html'> Ajouter un utilisateur </a> ";
+		echo "<a href='xxxxx.html'> Ajouter un patient </a> ";
 	}
-// ajout ou non d'un utilisateur ????
+//  suppression / modif des données des patients ????
 
 ?>
 
