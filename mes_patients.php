@@ -50,7 +50,7 @@ $req->execute(array(':ID_utilisateur' => $_SESSION['ID_utilisateur']));
 	</table> 
     </form>
 
-<form method="POST" action="#ajout">
+<form method="POST" action="nouveau_patient.php">
     <table>
 	<tr><td> <input type = "submit" name = "BTN_MOD" value = "AJOUT D'UN PATIENT"></td></tr>
 	</table> 
