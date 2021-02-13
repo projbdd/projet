@@ -10,6 +10,8 @@
 
 include("connexion_bd.php");
 
+$_SESSION['numerodoss'] = htmlspecialchars($_POST['numdoss']); 
+
 echo "Quelle visite du patient ".$_SESSION['numerodoss']." souhaitez-vous consulter ? <br /> \n";
 $requete = $bdd ->prepare('select Date from tab_suivi where N_dossier= :p_numdossier');
 $requete -> execute(array(':p_numdossier' => $_SESSION['numerodoss']));
@@ -29,16 +31,15 @@ $requete -> execute(array(':p_numdossier' => $_SESSION['numerodoss']));
             			$jour = $requete->fetch();
         			}
         	}
-			
+
         ?>
+        
+     <!-- A completer par Antoine -->   
 	<option selected="selected">Date de la visite</option>"Visite initiale"
     </select>
     <input type="submit" value="Submit">
 </form>
 	
-<?php
-
-?>
 
 
 </body>
