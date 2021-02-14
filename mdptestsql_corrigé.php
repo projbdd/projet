@@ -6,6 +6,10 @@
 		<title>Accès au site </title>
 </head>
 <body>
+
+
+
+
 <?php
 
  
@@ -29,23 +33,14 @@ if (isset($_POST['BTN_OK'])) // le bouton Accès site a été activé
 		{   
 			if ($ligne["Type"]=="Med")
 			{
-				echo "BRAVO doc ",htmlspecialchars($_POST['utilisateur'])," ! <br /> \n";
-				echo "<a href='accueil.html'> Accéder au site </a> ";
-				//Pour limiter les accès de l'utilisateur 
-				$_SESSION['ID_utilisateur'] = $ligne['ID_prof'];
-				echo "<a href='motpasse_corrigé.html'> <= Page précédante </a> <br /> \n"; 
+				$_SESSION['ID_utilisateur'] = $ligne['ID_prof'];	
+				// La fonction header() permet de renvoyer directement à la page d'acceuil sans afficher un page intermédiaire 
+				header("Location: accueil.html");						
 			}
 			
-			else if ($ligne["Type"]=="NA")
+			else
 			{
-				echo "</br></br>Vous n'avez plus accès au serveur. </br>";
-				echo "<a href = 'motpasse_corrigé.html'>Retour</a>";
-			}
-
-			else 
-			{
-				echo "BRAVO DM ",htmlspecialchars($_POST['utilisateur'])," ! <br /> \n";
-				echo "<a href='EspaceDataM.php'> Accéder au site </a> ";
+				header("Location: EspaceDataM.php");
 			}
 		} 
 			
