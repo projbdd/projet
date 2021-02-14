@@ -47,8 +47,8 @@
                         Identifiant <input name = "ID_to_update"></br></br>
                             Modifier : <select name = "selec"> 
                             <option> Nom </option>
-                            <option> Prénom </option>
-                            <option> Téléphone </option>
+                            <option> Prenom </option>
+                            <option> Telephone </option>
                             <option> Type </option>
                             <option> Mot de passe </option>
                         </select></br></br>
