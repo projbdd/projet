@@ -3,6 +3,7 @@
 	<head>
 		<meta charset="utf-8" />	
 		<title>Informations patient </title>
+		<link rel="stylesheet" media="screen" href="feuille_style.css">
 </head>
 	
 <body>
