@@ -35,7 +35,7 @@ if (isset($_POST['BTN_OK'])) // le bouton Accès site a été activé
 			{
 				$_SESSION['ID_utilisateur'] = $ligne['ID_prof'];	
 				// La fonction header() permet de renvoyer directement à la page d'accueil sans afficher une page intermédiaire 
-				header("Location: accueil.html");						
+				header("Location: accueil.php");						
 			}
 			
 			else if ($ligne["Type"]=="NA")
