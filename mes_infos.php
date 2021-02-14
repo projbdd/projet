@@ -56,7 +56,7 @@ $req->closeCursor() ;
 <table align="center">
 <tr><br/> <a href="mes_patients.php"> Mes patients</a></tr>
 <tr><br/> <a href="mes_collègues.php"> Mes collègues </a></tr>
-<tr><br/> <a href="accueil.html"> Page d'accueil </a></tr>
+<tr><br/> <a href="accueil.php"> Page d'accueil </a></tr>
 </table>
 
 
