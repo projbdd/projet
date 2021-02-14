@@ -32,6 +32,9 @@
 
 include("connexion_bd.php");
 
+// Cela nous permet de ré-initialiser le numéro de dossier gardé en session 
+unset($_SESSION["numerodoss"]);
+unset($_SESSION['jourvis']);
 
 // Requete qui cherche toutes les informations des patients traités par le medecin utilisateur 
 $req = $bdd -> prepare('SELECT tab_patient.* FROM tab_suivi 
