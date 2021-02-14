@@ -5,12 +5,28 @@
 		<title>Ajouter un nouveau patient </title>
 </head>
 <body>
+	
+<div class="navbar">
+    <a href="motpasse_corrigé.html">Déconnexion</a>
+    <div class="dropdown">
+        <button class="dropbtn">Mon compte
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="mes_infos.php">Mes informations</a>
+          <a href="mes_collègues.php">Mes collègues</a>
+        </div>
+    </div>
+</div>
+
+    
+<!-- Reste de la page-->
+<div class = "main">
+	
 <?php
 // connexion  à la base de données
 include("connexion_bd.php");
 
-
-// AJOUT D'UN MEDECIN
 
 $requete = $bdd -> prepare('insert into tab_patients values(:p_num_dossier, :p_date_debut_suivi, :p_nom, :p_pren, :p_adressage, :p_typ_consul, :p_sexe, :p_date_nais, :p_csp, :p_ethnie, :p_com_ou_pays_nais, :p_anne_dec_kc, :p_lat_man, :p_tabagisme_actif, :p_nb_cig_jr, :p_nb_annees, :p_tabagisme_passif, :p_situ_od, :p_situ_og)');
 
@@ -46,5 +62,6 @@ if ($requete != null){
 
 ?>
 
+	</div>
 </body>
 </html>
