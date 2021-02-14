@@ -123,7 +123,7 @@
             
             echo "</br><h3> Pas de prescription de lentilles pour ce patient. </h3></br></br>";
             echo "<a href = 'mes_patients.php'>Retour à la sélection du patient</a></br>
-                <a href = 'accueil.html'>Page d'accueil</a>";
+                <a href = 'accueil.php'>Page d'accueil</a>";
         } 
 
     ?>
