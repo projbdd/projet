@@ -36,7 +36,13 @@ if (isset($_POST['BTN_OK'])) // le bouton Accès site a été activé
 				echo "<a href='motpasse_corrigé.html'> <= Page précédante </a> <br /> \n"; 
 			}
 			
-			else
+			else if ($ligne["Type"]=="NA")
+			{
+				echo "</br></br>Vous n'avez plus accès au serveur. </br>";
+				echo "<a href = 'motpasse_corrigé.html'>Retour</a>";
+			}
+
+			else 
 			{
 				echo "BRAVO DM ",htmlspecialchars($_POST['utilisateur'])," ! <br /> \n";
 				echo "<a href='EspaceDataM.php'> Accéder au site </a> ";
