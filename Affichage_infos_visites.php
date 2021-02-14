@@ -4,8 +4,26 @@
 		<meta charset="utf-8" />	
 		<title>Informations patient </title>
 </head>
+	
 <body>
 
+<div class="navbar">
+    <a href="motpasse_corrigé.html">Déconnexion</a>
+    <div class="dropdown">
+        <button class="dropbtn">Mon compte
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="mes_infos.php">Mes informations</a>
+          <a href="mes_collègues.php">Mes collègues</a>
+        </div>
+    </div>
+</div>
+
+    
+<!-- Reste de la page-->
+<div class = "main">
+	
 <?php 
 include("connexion_bd.php");
 
@@ -147,7 +165,7 @@ else {
 }
 
 ?>
-
+</div>
 
 </body>
 </html>
