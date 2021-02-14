@@ -61,7 +61,7 @@ if (isset($_POST['BTN_MED']))
 
 
 <br/> <a href="mes_collègues.php"> Mes collègues </a>
-<br/> <a href="accueil.html"> Page d'accueil </a>
+<br/> <a href="accueil.php"> Page d'accueil </a>
 
 
 
