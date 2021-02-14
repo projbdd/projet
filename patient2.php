@@ -28,11 +28,9 @@
 
 include("connexion_bd.php");
 
-// Permet de vérifier que le numéro du dossier est renseigné 
-if ($_SESSION['numerodoss'] == "")
-{
-	$_SESSION['numerodoss']=$_POST['numdoss'];
-}
+// Stocker le numéro de dossier dans une variable session
+$_SESSION['numerodoss']=$_POST['numdoss'];
+
 
 
 echo "Le patient sélectionné est le patient numéro ".$_SESSION['numerodoss'].". </br>";
