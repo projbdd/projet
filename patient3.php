@@ -1,4 +1,5 @@
- <?php session_start(); ?>
+
+<?php session_start(); ?>
 <html>
 	<head>
 		<meta charset="utf-8" />	
@@ -9,8 +10,7 @@
 <?php 
 include("connexion_bd.php");
 
-
-if ($_POST['jourvis'] == "Visite initiale") {
+if ($_SESSION['jourvis'] == "Visite initiale") {
 	$requete1 = $bdd->prepare('select * from tab_patient where Num_dossier= :p_numdossier');
 	$requete1->execute(array(':p_numdossier' => $_SESSION['numerodoss']));
 	$ligne = $requete1->fetch();
@@ -168,8 +168,11 @@ else {
 
 echo "<a href='patient2.php'> Chercher une autre date </a> </br>";
 echo "<a href='mes_patients.php'> Chercher une autre patient </a> ";
-?>
 
+/* Antoine
+
+VALEURS MANQUANTES A PRENDRE EN COMPTE MAIS SINON C4Est GOOD*/
+?>
 
 
 </body>

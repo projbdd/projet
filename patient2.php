@@ -10,6 +10,8 @@
 
 include("connexion_bd.php");
 
+$_SESSION['numerodoss']=$_POST['numdoss'];
+
 echo "Le patient sélectionné est le patient numéro ".$_SESSION['numerodoss'].". </br>";
 $requete = $bdd ->prepare('select Date from tab_suivi where N_dossier= :p_numdossier');
 $requete -> execute(array(':p_numdossier' => $_SESSION['numerodoss']));
