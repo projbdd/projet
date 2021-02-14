@@ -28,7 +28,12 @@
 
 include("connexion_bd.php");
 
-$_SESSION['numerodoss']=$_POST['numdoss'];
+// Permet de vérifier que le numéro du dossier est renseigné 
+if ($_SESSION['numerodoss'] == "")
+{
+	$_SESSION['numerodoss']=$_POST['numdoss'];
+}
+
 
 echo "Le patient sélectionné est le patient numéro ".$_SESSION['numerodoss'].". </br>";
 $requete = $bdd ->prepare('select Date from tab_suivi where N_dossier= :p_numdossier');
