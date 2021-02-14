@@ -4,7 +4,6 @@
 	<head>
 		<meta charset="utf-8" />	
 		<title>Informations patient </title>
-		<link rel="stylesheet" media="screen" href="feuille_style.css">
 </head>
 <body>
 
@@ -55,7 +54,7 @@ if ($_SESSION['jourvis'] == "Visite initiale") {
 	
 	if ($ligne['Typ_consul'] != "") {
 		$requetetype = $bdd -> prepare('select Type_consultation from tab_codage_type_consultation where codage= :p_type_cons');
-		$requetetype -> execute(array(':p_type_cons' => $ligne['Type_consult']));
+		$requetetype -> execute(array(':p_type_cons' => $ligne['Typ_consul']));
 		$typecon = $requetetype->fetch();
 		echo "Type de consultation : ", $typecon['Type_consultation'], " </br>"; }
 	else {echo "type de consultation : inconnu </br>";}
@@ -75,15 +74,19 @@ if ($_SESSION['jourvis'] == "Visite initiale") {
 		echo "Date de naissance : ", $ligne['Date_nais'], " </br>";}
 	else {echo "Date de naissance : non renseigné </br>";}
 
-	$requetecsp = $bdd -> prepare('select CSP from tab_codage_csp where code= :p_codecsp');
-	$requetecsp -> execute(array(':p_codecsp' => $ligne['CSP']));
-	$csp = $requetecsp->fetch();
-	echo "Catégorie socio-professionnelle : ", $csp['CSP'], " </br>";
+	if ($ligne['CSP'] != "") {
+		$requetecsp = $bdd -> prepare('select CSP from tab_codage_csp where code= :p_codecsp');
+		$requetecsp -> execute(array(':p_codecsp' => $ligne['CSP']));
+		$csp = $requetecsp->fetch();
+		echo "Catégorie socio-professionnelle : ", $csp['CSP'], " </br>";}
+	else { echo "Catégorie socio-professionnelle : non renseignée </br>"; }
 
-	$requeteeth = $bdd -> prepare('select Ethnie from tab_codage_ethnie where code_ethnie= :p_codeeth');
-	$requeteeth -> execute(array(':p_codeeth' => $ligne['Ethnie']));
-	$ethnie = $requeteeth->fetch();
-	echo "Ethnie : ", $ethnie['Ethnie'], " </br>";
+	if ($ligne ['Ethnie'] != "") {
+		$requeteeth = $bdd -> prepare('select Ethnie from tab_codage_ethnie where code_ethnie= :p_codeeth');
+		$requeteeth -> execute(array(':p_codeeth' => $ligne['Ethnie']));
+		$ethnie = $requeteeth->fetch();
+		echo "Ethnie : ", $ethnie['Ethnie'], " </br>";}
+	else {echo"Ethnie : non renseignée </br>";}
 	
 	if ($ligne['Com_ou_Pays_nais'] != "") {
 		echo "Commune ou pays de naissance : ", $ligne['Com_ou_Pays_nais'], " </br>";}
@@ -94,10 +97,10 @@ if ($_SESSION['jourvis'] == "Visite initiale") {
 	else {"Année de la découverte du.des kératocones : non renseigné </br>";}
 
 	if ($ligne['Lat_man'] != "") {
-		$requetelat = $bdd -> prepare('select Lateralite from tab_codage_lateralite_manuelle where code_Latralite= :p_latlat');
+		$requetelat = $bdd -> prepare('select Lateralite from tab_codage_lateralite_manuelle where Code_Lateralite= :p_latlat');
 		$requetelat -> execute(array(':p_latlat' => $ligne['Lat_man']));
 		$lateral = $requetelat->fetch();
-		echo "Latéralité manuelle  : ", $lateral['Lat_man'], " </br>";}
+		echo "Latéralité manuelle  : ".$lateral['Lateralite']." </br>";}
 	else {echo "Latéralité manuelle : non renseignée </br>";}
 
 	if ($ligne['Tabagisme_actif']=="1"){
