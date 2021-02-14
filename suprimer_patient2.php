@@ -38,7 +38,7 @@ $ligne = $requete2->fetch();
 
 ?>
 </br>
-<form method="POST" action="accueil.html">
+<form method="POST" action="accueil.php">
 	<input type="submit" value="Retour à l'accueil">
 </form>
 </div>
