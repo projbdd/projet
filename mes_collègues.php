@@ -7,6 +7,7 @@
 	<head>
 		<meta charset="utf-8" />
 		<title> MES INFORMATIONS  </title>
+		<link rel="stylesheet" media="screen" href="feuille_style.css">
 	</head>
 <body>
 
