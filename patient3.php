@@ -23,17 +23,23 @@
     
 <!-- Reste de la page-->
 <div class = "main">
-	
+
 <?php 
 include("connexion_bd.php");
 
 if ($_SESSION['jourvis'] == "Visite initiale") {
+	
+	echo"<h2> Visite initiale</h2></br>";
+	
 	$requete1 = $bdd->prepare('select * from tab_patient where Num_dossier= :p_numdossier');
 	$requete1->execute(array(':p_numdossier' => $_SESSION['numerodoss']));
 	$ligne = $requete1->fetch();
 	
 	echo "Numero de dossier : ", $ligne['Num_dossier'], " </br>";
-	echo "Date du début de suivi : ", $ligne['Date_debut_suivi'], " </br>";
+	
+	if ($ligne['Date_debut_suivi'] != ""){
+	echo "Date du début de suivi : ", $ligne['Date_debut_suivi'], " </br>"; }
+	
 	echo "Nom : ", $ligne['Nom'], " </br>";
 	echo "Prénom : ", $ligne['Pren'], " </br>";
 
@@ -46,7 +52,7 @@ if ($_SESSION['jourvis'] == "Visite initiale") {
 	else { echo "Adressage : inconnu </br>";
 	}
 	
-	if ($ligne['Type_consult'] != "") {
+	if ($ligne['Typ_consul'] != "") {
 		$requetetype = $bdd -> prepare('select Type_consultation from tab_codage_type_consultation where codage= :p_type_cons');
 		$requetetype -> execute(array(':p_type_cons' => $ligne['Type_consult']));
 		$typecon = $requetetype->fetch();
@@ -64,7 +70,9 @@ if ($_SESSION['jourvis'] == "Visite initiale") {
 		}
 	}
 
-	echo "Date de naissance : ", $ligne['Date_nais'], " </br>";
+	if ($ligne['Date_nais'] != "") {
+		echo "Date de naissance : ", $ligne['Date_nais'], " </br>";}
+	else {echo "Date de naissance : non renseigné </br>";}
 
 	$requetecsp = $bdd -> prepare('select CSP from tab_codage_csp where code= :p_codecsp');
 	$requetecsp -> execute(array(':p_codecsp' => $ligne['CSP']));
@@ -75,15 +83,21 @@ if ($_SESSION['jourvis'] == "Visite initiale") {
 	$requeteeth -> execute(array(':p_codeeth' => $ligne['Ethnie']));
 	$ethnie = $requeteeth->fetch();
 	echo "Ethnie : ", $ethnie['Ethnie'], " </br>";
+	
+	if ($ligne['Com_ou_Pays_nais'] != "") {
+		echo "Commune ou pays de naissance : ", $ligne['Com_ou_Pays_nais'], " </br>";}
+	else { echo "Commune ou pays de naissance : non renseigné </br>";}
 
-	echo "Commune ou pays de naissance : ", $ligne['Com_ou_Pays_nais'], " </br>";
+	if ($ligne['Annee_dec_KC'] != "") {
+		echo "Année de la découverte du.des kératocone.s : ", $ligne['Annee_dec_KC'], " </br>";}
+	else {"Année de la découverte du.des kératocones : non renseigné </br>";}
 
-	echo "Année de la découverte du.des kératocone.s : ", $ligne['Annee_dec_KC'], " </br>";
-
-	$requetelat = $bdd -> prepare('select Lateralite from tab_codage_lateralite_manuelle where code_Latralite= :p_latlat');
-	$requetelat -> execute(array(':p_latlat' => $ligne['Lat_man']));
-	$lateral = $requetelat->fetch();
-	echo "Latéralité manuelle  : ", $lateral['Leteralite'], " </br>";
+	if ($ligne['Lat_man'] != "") {
+		$requetelat = $bdd -> prepare('select Lateralite from tab_codage_lateralite_manuelle where code_Latralite= :p_latlat');
+		$requetelat -> execute(array(':p_latlat' => $ligne['Lat_man']));
+		$lateral = $requetelat->fetch();
+		echo "Latéralité manuelle  : ", $lateral['Lat_man'], " </br>";}
+	else {echo "Latéralité manuelle : non renseignée </br>";}
 
 	if ($ligne['Tabagisme_actif']=="1"){
 		echo "Statut tabagique actif : Fumeur </br>";
@@ -127,16 +141,15 @@ if ($_SESSION['jourvis'] == "Visite initiale") {
 	
 
 }
-
-
-
 else {
+	
+	echo"<h2> Visite à la date ".$_SESSION['jourvis']."</h2></br>";
+	
 	$requete2 = $bdd->prepare('select * from tab_suivi where N_dossier= :p_numdossier AND Date= :p_datecons');
-	$requete2->execute(array(':p_numdossier' => $_SESSION['numerodoss'], ':p_datecons' => $_POST['jourvis']));
+	$requete2->execute(array(':p_numdossier' => $_SESSION['numerodoss'], ':p_datecons' => $_SESSION['jourvis']));
 	$ligne = $requete2->fetch();
 	
-	
-	echo "Numero de dossier : ", $ligne['N_dossier'], " </br>";
+	echo "Numero de dossier : ", $ligne['N_dossier'],"</br>";
 	
 	if ($ligne['Type_consult'] != "") {
 		$requetetypec = $bdd -> prepare('select Type_CS from tab_codage_suivi where ID_CS_Suivi= :p_type_consu');
@@ -145,15 +158,10 @@ else {
 		echo "Type de consultation : ", $typecons['Type_CS'], " </br>";}
 	else {echo "Type de consultation : inconnu </br>";}
 	
-	echo "Date de consultation : ", $ligne['Date']," </br>";
+	if ($ligne['Signes_Fonctionnels _details'] != ""){
+		echo "Signes fonctionnels détaillés : ", $ligne['Signes_Fonctionnels _details'], " </br>";}
+	else{echo"Signes fonctionnels détaillés : non renseignés </br>";}
 	
-	if ($ligne['Signes_Fonctionnels_details'] != ""){
-		echo "Signes fonctionnels détaillés : ", $ligne['Signes_Fonctionnels_details'], " </br>";
-	}
-	
-	
-	
-	echo "Signes fonctionnels OPH : </br>";
 	if ($ligne['BAVrapide']=="1") { echo "BAV rapide (< 1 an) </br>";}
 	if ($ligne['BAVlente']=="1") { echo "BAV lente </br>";}
 	if ($ligne['Halos_noct']=="1") { echo "Halos nocturnes </br>";}
@@ -162,10 +170,12 @@ else {
 	if ($ligne['Rougeurs_ocul']=="1") { echo "Rougeurs oculaires </br>";}
 	if ($ligne['Autre']=="1") { echo "Autre : ", $ligne['Autre_det'], " </br>";}
 	
-	$requetefrot = $bdd -> prepare('select Frottement_oculaire from tab_codage_frottement_oculaire where Code_Frottement= :p_codefrot');
-	$requetefrot -> execute(array(':p_codefrot' => $ligne['Frottement_yeux']));
-	$frotyeux = $requetefrot->fetch();
-	echo "Frottement des yeux : ", $frotyeux['Frottement_oculaire'], " </br>";
+	if ($ligne['Frottement_yeux'] !=""){
+		$requetefrot = $bdd -> prepare('select Frottement_oculaire from tab_codage_frottement_oculaire where Code_Frottement= :p_codefrot');
+		$requetefrot -> execute(array(':p_codefrot' => $ligne['Frottement_yeux']));
+		$frotyeux = $requetefrot->fetch();
+		echo "Frottement des yeux : ", $frotyeux['Frottement_oculaire'], " </br>";}
+	else {echo "Frottement des yeux : non renseigné </br>";}
 	
 	if($ligne['Port_lentille']=="1"){
 		echo "Port de lentilles : OUI </br>";
@@ -183,13 +193,19 @@ else {
 	
 }
 
-echo "<a href='patient2.php'> Chercher une autre date </a> </br>";
-echo "<a href='mes_patients.php'> Chercher une autre patient </a> ";
 
-/* Antoine
-
-VALEURS MANQUANTES A PRENDRE EN COMPTE MAIS SINON C4Est GOOD*/
 ?>
+</br></br>
+<form method="POST" action="patient2.php">
+	<input type="submit" value="Chercher une autre date">
+</form>
+</br>
+<form method="POST" action="mes_patients.php">
+	<input type="submit" value="Chercher un autre patient">
+</form>
+</br>
+
+
 
 </div>
 </body>
