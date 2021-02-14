@@ -9,19 +9,21 @@
 </head>
 <body>
 
-   <div class="navbar">
-        <a href="motpasse_corrigé.html">Déconnexion</a>
-        <div class="dropdown">
+<div class="navbar">
+    <a href="motpasse_corrigé.html">Déconnexion</a>
+    <div class="dropdown">
         <button class="dropbtn">Mon compte
           <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-content">
-          <a href="mes_infos.php">Mes informations</a> 
+          <a href="mes_infos.php">Mes informations</a>
           <a href="mes_collègues.php">Mes collègues</a>
         </div>
-      </div>
     </div>
-
+</div>
+    
+<!-- Reste de la page-->
+<div class = "main">
 
 <?php
 include("connexion_bd.php");
@@ -65,5 +67,6 @@ echo "<br /> TEST- ID_UTILISATEUR :". $_SESSION['ID_utilisateur'];
 ?>
 -->
 
+</div>
 </body>
 </html>
