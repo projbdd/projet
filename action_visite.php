@@ -28,8 +28,12 @@
 
 $_SESSION['jourvis']= htmlspecialchars($_POST['jourvis']);
 
-echo "Le patient sélectionné est le patient numéro ".$_SESSION['numerodoss']." et la visite est celle du".$_SESSION['jourvis'].". </br>";
-echo "Que voulez-vous faire ?</br>";
+if ($_SESSION['jourvis'] == "Visite initiale") {
+  echo "Vous avez sélectionné la visite initiale du patient numéro ".$_SESSION['numerodoss'].". </br>";
+} else {
+  echo "Vous avez sélectionné la visite du ".$_SESSION['jourvis']." du patient numéro ".$_SESSION['numerodoss'].".</br>";
+}
+  echo "Que voulez-vous faire ?</br></br>";
 
 ?>
 
