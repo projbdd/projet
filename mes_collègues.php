@@ -62,7 +62,7 @@ $req->execute(array(':ID_utilisateur' => $_SESSION['ID_utilisateur']));
 
 
 <br/> <a href="mes_infos.php"> Mes informations</a>
-<br/> <a href="accueil.html"> Page d'accueil </a>
+<br/> <a href="accueil.php"> Page d'accueil </a>
 
 <!--
 <?php
