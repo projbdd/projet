@@ -51,7 +51,7 @@ $requete -> execute(array(':p_numdossier' => $_SESSION['numerodoss']));
 </form>
 </br>
 <form method="POST" action="suprimer_patient.php">
-	<input type="submit" value="supprimer ce patient">
+	<input type="submit" value="Supprimer ce patient">
 </form>
 </br>
 
