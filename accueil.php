@@ -12,8 +12,8 @@
     
     <!-- Partie du haut -->
     
-    <div class="navbar">
-        <a href="motpasse_corrigé.html">Déconnexion</a>
+    <div class="navbar">   
+        <a href="deconnexion.php">Déconnexion</a> // Fermetture de la session avec session_destroy();
         <div class="dropdown">
         <button class="dropbtn">Mon compte
           <i class="fa fa-caret-down"></i>
