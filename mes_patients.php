@@ -41,8 +41,8 @@ $req->execute(array(':ID_utilisateur' => $_SESSION['ID_utilisateur']));
         {	
         	foreach($ligne as $item)
         	{
-            	echo "<option value=".$ligne['Num_dossier'].">".$ligne['Num_dossier']." ".$ligne['Nom']." ".$ligne['Pren']."</option>";
-            	$ligne = $req->fetch();
+            		echo "<option value=".$ligne['Num_dossier'].">".$ligne['Num_dossier']." ".$ligne['Nom']." ".$ligne['Pren']."</option>";
+            		$ligne = $req->fetch();
         	}
         }
         $req->closeCursor() ;
