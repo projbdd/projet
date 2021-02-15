@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<?php include("barr_navig.html"); ?>
+<?php include("barr_navig.html");?>
     
 <!-- Reste de la page-->
 <div class = "main">
