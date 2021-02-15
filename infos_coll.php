@@ -17,6 +17,8 @@
 <?php
 
 include("connexion_bd.php");
+	
+echo "<center><h2>Mon collègue </h2></center>";
 
 //le bouton Valider a été activé
 if (isset($_POST['BTN_MED'])) 
