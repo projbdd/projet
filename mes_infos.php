@@ -1,26 +1,18 @@
 <?php  session_start();?>
 
-<!DOCTYPE html>
 <html>
 <head>
 		<meta charset="utf-8" />
-		<title> MES INFORMATIONS  </title>
+		<title> Mes informations  </title>
 	<link rel="stylesheet" media="screen" href="feuille_style.css">
 </head>
 <body>
 
-<div class="navbar">
-    <a href="motpasse_corrigé.html">Déconnexion</a>
-    <div class="dropdown">
-        <button class="dropbtn">Mon compte
-          <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="dropdown-content">
-          <a href="mes_infos.php">Mes informations</a>
-          <a href="mes_collègues.php">Mes collègues</a>
-        </div>
-    </div>
-</div>
+<?php
+//Barre de navigation 
+include("barr_navig.html");
+?>
+    
     
 <!-- Reste de la page-->
 <div class = "main">
@@ -40,10 +32,10 @@ $label = array("Nom", "Prénom", "Age", "Téléphone");
 
 if ($ligne)
 {
-	echo "<table>";
+	echo "<br/> <br/> <table id = infoMed >";
 	for ($i=0;$i<=3;$i++)
 	{
-		echo "<tr><td><strong>".$label[$i]." : </strong> </td>  <td>".$ligne[$i+1]."</td></tr>";
+		echo "<tr id = infoMed ><td><strong>".$label[$i]." : </strong> </td>  <td>".$ligne[$i+1]."</td></tr>";
 
 	}
 	echo "</table>";
@@ -53,10 +45,12 @@ $req->closeCursor() ;
 ?>
 
 
-<table align="center">
-<tr><br/> <a href="mes_patients.php"> Mes patients</a></tr>
-<tr><br/> <a href="mes_collègues.php"> Mes collègues </a></tr>
-<tr><br/> <a href="accueil.php"> Page d'accueil </a></tr>
+<table id = end_table>
+<tr id = end_page>
+	<td><a href="mes_patients.php"> Mes patients</a></td>
+	<td> &nbsp;&nbsp; </td>
+	<td><a href="mes_collègues.php"> Mes collègues </a></td>
+	</tr>
 </table>
 
 
