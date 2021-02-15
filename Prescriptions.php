@@ -5,7 +5,7 @@
 <head>
 	<meta charset="utf-8" />	
 	<title> Afficher les prescriptions </title>
-    <link rel="stylesheet" media="screen" href="feuille_style.css">
+    <link rel="stylesheet" media="screen" href="feuille_style_presc.css">
 </head>
 
 <body>
