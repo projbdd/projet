@@ -1,4 +1,6 @@
 <?php session_start(); ?>
+
+
 <html>
 	<head>
 		<meta charset="utf-8" />	
@@ -7,19 +9,8 @@
 </head>
 <body>
 
-<div class="navbar">
-    <a href="motpasse_corrigé.html">Déconnexion</a>
-    <div class="dropdown">
-        <button class="dropbtn">Mon compte
-          <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="dropdown-content">
-          <a href="mes_infos.php">Mes informations</a>
-          <a href="mes_collègues.php">Mes collègues</a>
-        </div>
-    </div>
-</div>
 
+<?php include("barr_navig.html"); ?>
     
 <!-- Reste de la page-->
 <div class = "main">
@@ -29,25 +20,25 @@
 $_SESSION['jourvis']= htmlspecialchars($_POST['jourvis']);
 
 if ($_SESSION['jourvis'] == "Visite initiale") {
-  echo "Vous avez sélectionné la visite initiale du patient numéro ".$_SESSION['numerodoss'].". </br>";
+  echo "<br/> Vous avez sélectionné la visite initiale du patient numéro <strong>".$_SESSION['numerodoss']."</strong>. <br/>";
 } else {
-  echo "Vous avez sélectionné la visite du ".$_SESSION['jourvis']." du patient numéro ".$_SESSION['numerodoss'].".</br>";
+  echo "<br/> Vous avez sélectionné la visite du <strong>".$_SESSION['jourvis']."</strong> du patient numéro <strong>".$_SESSION['numerodoss']."</strong>. <br/>";
 }
-  echo "Que voulez-vous faire ?</br></br>";
+  echo "<br/>Que voulez-vous faire ?<br/></br/>";
 
 ?>
 
 
 <form method="POST" action="patient3.php">
-	<input type="submit" value="Voir les informations sur cette visite">
+	<input id = "bouton" type="submit" value="Voir les informations sur cette visite">
 </form>
 </br>
 <form method="POST" action="modif_suivi.php">
-	<input type="submit" value="Modifier des informations sur cette visite">
+	<input id= "bouton" type="submit" value="Modifier des informations sur cette visite">
 </form>
 </br>
 <form method="POST" action="suppression_suivi.php">
-	<input type="submit" value="Supprimer cette visite">
+	<input id = "bouton" type="submit" value="Supprimer cette visite">
 </form>
 
 </div>
