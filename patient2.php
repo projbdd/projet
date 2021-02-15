@@ -37,7 +37,7 @@ if ($_SESSION['numerodoss'] == "Sélectionnez votre patient")
 	}
 	
 
-// Ne rien faire si $_SESSION['numerodoss'] est déja renseigné 
+// Ne rien faire si $_SESSION['numerodoss'] est déja renseignée 
 
 
 echo "<br/> Le patient sélectionné est le patient numéro <strong>".$_SESSION['numerodoss']."</strong>. </br>";
