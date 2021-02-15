@@ -3,24 +3,16 @@
 <html>
 	<head>
 		<meta charset="utf-8" />	
-		<title>Informations patient </title>
+		<title> Supprimer patient </title>
+		<link rel="stylesheet" media="screen" href="feuille_style.css">
 </head>
 <body>
 
-<div class="navbar">
-    <a href="motpasse_corrigé.html">Déconnexion</a>
-    <div class="dropdown">
-        <button class="dropbtn">Mon compte
-          <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="dropdown-content">
-          <a href="mes_infos.php">Mes informations</a>
-          <a href="mes_collègues.php">Mes collègues</a>
-        </div>
-    </div>
-</div>
+<?php
+//Barre de navigation 
+include("barr_navig.html");
+?>
 
-    
 <!-- Reste de la page-->
 <div class = "main">
 
@@ -37,10 +29,8 @@ $ligne = $requete2->fetch();
 {echo "Le patient ".$_SESSION['numerodoss']." a été supprimée. </br>";}
 
 ?>
-</br>
-<form method="POST" action="accueil.php">
-	<input type="submit" value="Retour à l'accueil">
-</form>
+
 </div>
 </body>
 </html>
+
