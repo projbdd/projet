@@ -23,12 +23,12 @@ echo "<h2>Voulez-vous vraiment supprimer le patient numéro ".$_SESSION['numerod
 ?>
 </br>
 <form method="POST" action="suprimer_patient2.php">
-	<input type="submit" value="OUI">
+	<input id = "bouton"  type="submit" value="OUI">
 </form>
 </br>
 </br>
 <form method="POST" action="patient2.php">
-	<input type="submit" value="NON">
+	<input id = "bouton" type="submit" value="NON">
 </form>
 </br>
 </div>
