@@ -1,5 +1,6 @@
 <?php session_start()?>
 
+
 <html>
 <head>
 	<meta charset="utf-8" />	
@@ -9,19 +10,11 @@
 
 <body>
 
-<div class="navbar">
-    <a href="motpasse_corrigé.html">Déconnexion</a>
-    <div class="dropdown">
-        <button class="dropbtn">Mon compte
-          <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="dropdown-content">
-          <a href="mes_infos.php">Mes informations</a>
-          <a href="mes_collègues.php">Mes collègues</a>
-        </div>
-    </div>
-</div>
-
+<?php
+//Barre de navigation 
+include("barr_navig.html");
+?>
+    
     
 <!-- Reste de la page-->
 <div class = "main">
@@ -122,8 +115,8 @@
         } else {
             
             echo "</br><h3> Pas de prescription de lentilles pour ce patient. </h3></br></br>";
-            echo "<a href = 'mes_patients.php'>Retour à la sélection du patient</a></br>
-                <a href = 'accueil.php'>Page d'accueil</a>";
+            echo "<a href = 'mes_patients.php'>Retour à la sélection du patient</a></br>";
+            echo "<a href = 'patient2.php'> Retour à la page du patient </a></br>";
         } 
 
     ?>
