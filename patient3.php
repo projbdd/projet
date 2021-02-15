@@ -1,5 +1,6 @@
 
 <?php session_start(); ?>
+
 <html>
 	<head>
 		<meta charset="utf-8" />	
@@ -9,18 +10,11 @@
 </head>
 <body>
 
-<div class="navbar">
-    <a href="motpasse_corrigé.html">Déconnexion</a>
-    <div class="dropdown">
-        <button class="dropbtn">Mon compte
-          <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="dropdown-content">
-          <a href="mes_infos.php">Mes informations</a>
-          <a href="mes_collègues.php">Mes collègues</a>
-        </div>
-    </div>
-</div>
+<?php
+//Barre de navigation 
+include("barr_navig.html");
+?>
+
 
     
 <!-- Reste de la page-->
@@ -203,11 +197,11 @@ else {
 ?>
 </br></br>
 <form method="POST" action="patient2.php">
-	<input type="submit" value="Chercher une autre date">
+	<input id = "bouton" type="submit" value="Chercher une autre date">
 </form>
 </br>
 <form method="POST" action="mes_patients.php">
-	<input type="submit" value="Chercher un autre patient">
+	<input id="bouton" type="submit" value="Chercher un autre patient">
 </form>
 </br>
 
