@@ -35,10 +35,10 @@ include("barr_navig.html");
         $presc = $req -> fetch();
 
         if ($presc) { // Vérifier si l'utilisateur a bien été trouvé
-
+		
             echo "<h2> Prescriptions associées au dossier numéro ".$_SESSION['numerodoss']." </h2>";
-            echo "<a href = 'mes_patients.php'>Retour à la sélection du patient</a></br>
-                <a href = 'patient2.php'>Retour à la page du patient</a></br>";
+            echo "<a href = 'mes_patients.php'>Retour à la sélection du patient</a> </br>
+                 <a href = 'patient2.php'>Retour à la page du patient</a></br>";
                 
             while ($presc) {
 
