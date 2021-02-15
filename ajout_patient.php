@@ -45,6 +45,7 @@ $requete -> execute(array(':p_num_dossier' => $_SESSION['nouveaunum'],
 if ($requete != null){
 	echo "</br> Le patient avec le numéro de dossier ".htmlspecialchars($_SESSION['nouveaunum'])." à été ajouté avec succès ! </br>";
 	echo " Pour finaliser sa création, veuillez remplir une fiche de suivi :</br></br>";
+	$_SESSION['numerodoss']=$_SESSION['nouveaunum'];
 	?>
 	<form method="POST" action="nouveau_suivi.php">
 		<input id = "bouton" type="submit" value="Première fiche de suivi"/> <br />  
