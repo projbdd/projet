@@ -17,11 +17,15 @@ include("barr_navig.html");
 	
 <?php
 include("connexion_bd.php");
+$req = $bdd -> prepare('SELECT max(Num_dossier)+1 as max FROM tab_patient');
+$req -> execute();
+$numero = $req -> fetch();
+$_SESSION['nouveaunum'] = $numero['max'];
 ?>
 
 <form method="POST" action="ajout_patient.php">
 	<fieldset><legend><h3>Ajout d'un nouveau patient</h3></legend>
-		Numéro de dossier : <input name='numdo'></br>
+		<?php echo "Le nouveau patient portera le numéro : ".$_SESSION['nouveaunum'].".</br></br>"; ?>
 		Date du début du suivi : <input name='datedeb' type="datetime-local"></br>
 		Nom : <input name='nom'></br>
 		Prénom : <input name="pren"></br>
