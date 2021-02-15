@@ -1,35 +1,20 @@
-<?php  session_start();
+<?php  session_start(); ?>
 
-?>
-
-<!DOCTYPE html>
 <html>
-	<head>
+<head>
 		<meta charset="utf-8" />
-		<title> MES INFORMATIONS  </title>
-		<link rel="stylesheet" media="screen" href="feuille_style.css">
-	</head>
+		<title> Mes collègues  </title>
+	<link rel="stylesheet" media="screen" href="feuille_style.css">
+</head>
 <body>
 
-<div class="navbar">
-    <a href="motpasse_corrigé.html">Déconnexion</a>
-    <div class="dropdown">
-        <button class="dropbtn">Mon compte
-          <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="dropdown-content">
-          <a href="mes_infos.php">Mes informations</a>
-          <a href="mes_collègues.php">Mes collègues</a>
-        </div>
-    </div>
-</div>
+<?php include("barr_navig.html"); ?>
 
-    
 <!-- Reste de la page-->
 <div class = "main">
 <?php
-
 include("connexion_bd.php");
+
 
 
 $req = $bdd -> prepare('SELECT * FROM tab_utilisateurs  
@@ -38,9 +23,10 @@ AND NOT ID_prof = 999');
 $req->execute(array(':ID_utilisateur' => $_SESSION['ID_utilisateur']));
 ?>
 
+<br/>
 <form method="POST" action="infos_coll.php">
-    <select name="autre_med">
-        <option selected="selected"> Autre médecin </option>
+    <select id="selectbox" name="autre_med">
+        <option selected="selected"> Sélectionner votre collègue </option>
         <?php
         $ligne = $req->fetch();
         while ($ligne)
@@ -55,14 +41,11 @@ $req->execute(array(':ID_utilisateur' => $_SESSION['ID_utilisateur']));
         
         ?>
     </select>
-    <table>
-	<tr><td> <input type = "submit" name = "BTN_MED" value = "VALIDER"></td></tr>
-	</table> 
+	<input id = "bouton" type = "submit" name = "BTN_MED" value = "Valider">
 
 
 
-<br/> <a href="mes_infos.php"> Mes informations</a>
-<br/> <a href="accueil.php"> Page d'accueil </a>
+
 
 <!--
 <?php
