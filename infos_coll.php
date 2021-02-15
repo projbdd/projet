@@ -4,24 +4,12 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<title> INFORMATIONS DE MES COLLEGES  </title>
+		<title> Informations collègue </title>
 	<link rel="stylesheet" media="screen" href="feuille_style.css">
 </head>
 <body>
 
-<div class="navbar">
-    <a href="motpasse_corrigé.html">Déconnexion</a>
-    <div class="dropdown">
-        <button class="dropbtn">Mon compte
-          <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="dropdown-content">
-          <a href="mes_infos.php">Mes informations</a>
-          <a href="mes_collègues.php">Mes collègues</a>
-        </div>
-    </div>
-</div>
-
+<?php include("barr_navig.html"); ?>
     
 <!-- Reste de la page-->
 <div class = "main">
@@ -34,6 +22,16 @@ include("connexion_bd.php");
 if (isset($_POST['BTN_MED'])) 
 {	
 	$_SESSION['autre'] = htmlspecialchars($_POST['autre_med']); 
+	
+	if ($_SESSION['autre'] == "Sélectionner votre collègue")
+	
+	{
+		header("Location: mes_collègues.php");	
+	}
+	
+	else {
+	
+
 	$req = $bdd -> prepare('SELECT * FROM tab_utilisateurs WHERE ID_prof = :ID_utilisateur');
 	$req->execute(array(':ID_utilisateur' => $_SESSION['autre']));
 	
@@ -43,7 +41,7 @@ if (isset($_POST['BTN_MED']))
 	
 	if ($ligne)
 	{
-		echo "<table>";
+		echo "<br/> <br/> <table id = infoMed >";
 		for ($i=0;$i<=3;$i++)
 		{
 			echo "<tr><td><strong>".$label[$i]." : </strong> </td>  <td>".$ligne[$i+1]."</td></tr>";
@@ -54,15 +52,22 @@ if (isset($_POST['BTN_MED']))
 
 	
 	$req->closeCursor() ;
+	
+	} //from else 
+	
 
 }
 
 ?>
 
 
-<br/> <a href="mes_collègues.php"> Mes collègues </a>
-<br/> <a href="accueil.php"> Page d'accueil </a>
-
+<table id = end_table>
+<tr id = end_page>
+	<td><a href="mes_collègues.php"> Mes collègues</a></td>
+	<td> &nbsp;&nbsp; </td>
+	<td><a href="mes_infos.php"> Mes informations </a></td> 
+</tr>
+</table>
 
 
 <!--
