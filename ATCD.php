@@ -10,7 +10,7 @@
 <body>
 
 <!-- Barre de navigation -->
-<?php include("barr_navig.php"); ?>
+<?php include("barr_navig.html"); ?>
 
     
 <!-- Reste de la page-->
