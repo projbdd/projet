@@ -1,4 +1,5 @@
 <?php session_start(); ?>
+
 <html>
 	<head>
 		<meta charset="utf-8" />	
@@ -7,18 +8,10 @@
 </head>
 <body>
 
-<div class="navbar">
-    <a href="motpasse_corrigé.html">Déconnexion</a>
-    <div class="dropdown">
-        <button class="dropbtn">Mon compte
-          <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="dropdown-content">
-          <a href="mes_infos.php">Mes informations</a>
-          <a href="mes_collègues.php">Mes collègues</a>
-        </div>
-    </div>
-</div>
+<?php
+//Barre de navigation 
+include("barr_navig.html");
+?>
 
     
 <!-- Reste de la page-->
@@ -33,35 +26,44 @@ if (isset($_POST['BTN_PAT'])) // le bouton Valider de mes_patients.php
 {
 
 	$_SESSION['numerodoss']= $_POST['numdoss'];
+	
 }
+
+// Reste sur la page tant qu'aucun patient n'est sélectionné	
+if ($_SESSION['numerodoss'] == "Sélectionnez votre patient")
+	
+	{
+		header("Location: mes_patients.php");	
+	}
+	
 
 // Ne rien faire si $_SESSION['numerodoss'] est déja renseigné 
 
 
-echo "Le patient sélectionné est le patient numéro ".$_SESSION['numerodoss'].". </br>";
+echo "<br/> Le patient sélectionné est le patient numéro <strong>".$_SESSION['numerodoss']."</strong>. </br>";
 $requete = $bdd ->prepare('select Date from tab_suivi where N_dossier= :p_numdossier');
 $requete -> execute(array(':p_numdossier' => $_SESSION['numerodoss']));
 ?>
 </br>
 <form method="POST" action="ATCD.php">
-	<input type="submit" value="Voir les antécédents du patient">
+	<input id = "bouton" type="submit" value="Voir les antécédents du patient">
 </form>
 </br>
 <form method="POST" action="prescriptions.php">
-	<input type="submit" value="Voir les préscriptions du patient">
+	<input id = "bouton" type="submit" value="Voir les préscriptions du patient">
 </form>
 </br>
 <form method="POST" action="nouveau_suivi.php">
-	<input type="submit" value="Ajouter une nouvelle fiche de suivi à ce patient">
+	<input id = "bouton" type="submit" value="Ajouter une nouvelle fiche de suivi à ce patient">
 </form>
 </br>
 <form method="POST" action="suprimer_patient.php">
-	<input type="submit" value="Supprimer ce patient">
+	<input id = "bouton" type="submit" value="Supprimer ce patient">
 </form>
 </br>
 
 <form method="POST" action="action_visite.php">
-    <select name="jourvis">
+    <select id = "selectbox" name="jourvis">
         <option selected="selected">Date de la visite</option>
         <?php
         $jour = $requete->fetch();
@@ -78,7 +80,7 @@ $requete -> execute(array(':p_numdossier' => $_SESSION['numerodoss']));
 	<option selected="selected">Visite initiale</option>
     </select>
 	
-	<input type="submit" value="Ok">
+	<input id = "bouton" type="submit" value="Ok">
 	
 </form>
 
