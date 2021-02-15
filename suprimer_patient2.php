@@ -26,7 +26,7 @@ $requete2 = $bdd -> prepare('SELECT ID_med FROM tab_suivi WHERE N_dossier=:p_dos
 $requete2 -> execute(array(':p_dossdoss' => $_SESSION['numerodoss']));
 $ligne = $requete2->fetch();
 
-{echo "Le patient ".$_SESSION['numerodoss']." a été supprimée. </br>";}
+{echo "<br/><h2>Le patient ".$_SESSION['numerodoss']." a été supprimée. </h2></br>";}
 
 ?>
 
