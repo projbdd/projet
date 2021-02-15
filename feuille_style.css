@@ -68,6 +68,7 @@
   display: block;
 }
 
+/* Page d'accueil */
 #table1 {
   vertical-align: middle;
   horizontal-align: middle;
@@ -76,6 +77,7 @@
   margin: auto 
 }
 
+/* Page d'affichage des stats (Kler*/
 #stats {
   vertical-align: middle;
 	horizontal-align: middle;
@@ -83,7 +85,7 @@
   margin: auto;
   margin: auto }
 	
-
+/* Espace data manager */
 #DataM {
   
 }
@@ -94,6 +96,7 @@
   margin-inline-end: inherit;
 }
 
+/* Page d'affichage des prescriptions */ 
 #presc {
   margin : auto;
   width: 50%;
@@ -111,6 +114,23 @@
   table-layout: auto;
   border-style: solid;      
 }
+
+/* Format affichage des antécédents */
+#atcd {
+  width: 50%;
+  border-style: solid;
+  border-collapse:collapse;
+  table-layout: auto;
+}
+
+.atcd1 {
+  border-style: solid;
+}
+
+.atcd2 {
+  border-style: solid;
+}
+
 
 /* Format fichier de Grace  */
 
