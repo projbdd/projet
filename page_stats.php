@@ -2,7 +2,7 @@
 	<head>
 		<meta charset="utf-8" />	
 		<title>Informations patient</title>
-		<link rel="stylesheet" media="screen" href="feuille_style_stats.css">
+		<link rel="stylesheet" media="screen" href="feuille_style.css">
 </head>
 
 <body>
@@ -225,7 +225,7 @@ $ligneethnie5t = $requeteethnie5t->fetch();
 ?>
 
 
-<table>
+<table id = 'stats'>
 	<tr><th></th><th> Proportions de lentilles </th><th> Nombre moyen de consultations  </th> </tr> 
 	<tr><th>Sexe</th></tr> 
 	<tr><td>Femmes </td><td> <?php echo round(($ligne6["tot"]/$ligne5["tot"])*100,2), "%" ?> </td><td> <?php echo $ligne2["moyenne"] ?> </td></tr> 
