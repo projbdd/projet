@@ -7,9 +7,6 @@
 </head>
 <body>
 
-
-
-
 <?php
 
  
@@ -40,7 +37,7 @@ if (isset($_POST['BTN_OK'])) // le bouton Accès site a été activé
 			
 			else if ($ligne["Type"]=="NA")
 			{
-				echo "</br>Vous n'avez plus accès au serveur. </br>";
+				echo "<br/><h3>Vous n'avez plus accès au serveur. </h3>";
 				echo "<a href = 'motpasse_corrigé.html'>Retour</a>";
 			}
 			
@@ -52,15 +49,15 @@ if (isset($_POST['BTN_OK'])) // le bouton Accès site a été activé
 			
 		else 
 		{ 
-			echo "Ce n'est pas le bon mot de passe <br /> ";
-			echo "Attention ",htmlspecialchars($_POST['utilisateur'])," ! <br /> \n";
+			echo "<br/><h3>Ce n'est pas le bon mot de passe </h3>";
+			echo "<h4>Attention ".htmlspecialchars($_POST['utilisateur'])." !</h4> ";
 			echo "<a href='motpasse_corrigé.html'> Nouvel Essai </a> "; // Permet de retourner sur la saisie du mot de passe
 		}
 	} 
 		
 	else  
 	{ 
-		echo "Utilisateur inconnu <br /> ";
+		echo "<br/><h3>Utilisateur inconnu </h3> ";
 		echo "<a href='motpasse_corrigé.html'> Nouvel Essai </a> "; // Permet de retourner sur la saisie du mot de passe
 	}
 
@@ -71,3 +68,4 @@ if (isset($_POST['BTN_OK'])) // le bouton Accès site a été activé
 ?>
 </body>
 </html>
+
