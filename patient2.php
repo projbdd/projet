@@ -28,9 +28,14 @@
 
 include("connexion_bd.php");
 
-// Stocker le numéro de dossier dans une variable session
-$_SESSION['numerodoss']=$_POST['numdoss'];
+// Stocker le numéro de dossier dans une variable session seulement si sélectionné à partir du formulaire mes_patients.php
+if (isset($_POST['BTN_PAT'])) // le bouton Valider de mes_patients.php
+{
 
+	$_SESSION['numerodoss']= $_POST['numdoss'];
+}
+
+// Ne rien faire si $_SESSION['numerodoss'] est déja renseigné 
 
 
 echo "Le patient sélectionné est le patient numéro ".$_SESSION['numerodoss'].". </br>";
