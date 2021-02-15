@@ -38,7 +38,7 @@ include("barr_navig.html");
 
             echo "<h2> Prescriptions associées au dossier numéro ".$_SESSION['numerodoss']." </h2>";
             echo "<a href = 'mes_patients.php'>Retour à la sélection du patient</a></br>
-                <a href = 'accueil.html'>Page d'accueil</a></br>";
+                <a href = 'patient2.php'>Retour à la page du patient</a></br>";
                 
             while ($presc) {
 
@@ -116,7 +116,7 @@ include("barr_navig.html");
             
             echo "</br><h3> Pas de prescription de lentilles pour ce patient. </h3></br></br>";
             echo "<a href = 'mes_patients.php'>Retour à la sélection du patient</a></br>";
-            echo "<a href = 'patient2.php'> Retour à la page du patient </a></br>";
+            echo "<a href = 'patient2.php'>Retour à la page du patient </a></br>";
         } 
 
     ?>
