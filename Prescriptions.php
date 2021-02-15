@@ -5,7 +5,7 @@
 <head>
 	<meta charset="utf-8" />	
 	<title> Afficher les prescriptions </title>
-    <link rel="stylesheet" media="screen" href="feuille_style_presc.css">
+    <link rel="stylesheet" media="screen" href="feuille_style.css">
 </head>
 
 <body>
@@ -42,15 +42,15 @@ include("barr_navig.html");
                 
             while ($presc) {
 
-                echo "<table>
+                echo "<table id = 'presc'>
                         <th colspan= '2'> Date de la prescription : ".$presc['Date']."</th>
-                    <tr>";
+                    <tr class = 'presc1'>";
 
                 if ($presc['Oeil'] == "1") {
-                    echo "<td rowspan='8'> Oeil droit </td>
+                    echo "<td class = 'presc2' rowspan='8'> Oeil droit </td>
                         </tr>";
                 } else if ($presc['Oeil'] == "2") {
-                    echo "<td rowspan='8'> Oeil gauche </td>
+                    echo "<td class = 'presc2' rowspan='8'> Oeil gauche </td>
                     </tr>";
                 }
                 
