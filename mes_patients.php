@@ -1,29 +1,17 @@
-<?php  session_start(); 
+<?php  session_start(); ?>
 
-
-?>
-
-<!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8" />
-	<title> MES PATIENTS </title>
+	<title> Mes patients </title>
 	<link rel="stylesheet" media="screen" href="feuille_style.css">
 </head>
 <body>
 
-<div class="navbar">
-    <a href="motpasse_corrigé.html">Déconnexion</a>
-    <div class="dropdown">
-        <button class="dropbtn">Mon compte
-          <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="dropdown-content">
-          <a href="mes_infos.php">Mes informations</a>
-          <a href="mes_collègues.php">Mes collègues</a>
-        </div>
-    </div>
-</div>
+<?php
+//Barre de navigation 
+include("barr_navig.html");
+?>
     
 <!-- Reste de la page-->
 <div class = "main">
@@ -43,9 +31,10 @@ $req->execute(array(':ID_utilisateur' => $_SESSION['ID_utilisateur']));
 
 ?>
 
+<br/>
 <form method="POST" action="patient2.php">
-    <select name="numdoss">
-        <option selected="selected">Sélectionnez votre patient</option>
+    <select id = "selectbox" name="numdoss">
+        <option  selected="selected">Sélectionnez votre patient</option>
         <?php
         $ligne = $req->fetch();
         while ($ligne)
@@ -60,18 +49,16 @@ $req->execute(array(':ID_utilisateur' => $_SESSION['ID_utilisateur']));
         
         ?>
     </select>
-    <table>
-	<tr><td> <input type = "submit" name = "BTN_PAT" value = "VALIDER"></td></tr>
-	</table> 
+	<input  id = "bouton"  type = "submit" name = "BTN_PAT" value = "Valider"></td>
     </form>
 
 <form method="POST" action="nouveau_patient.php">
     <table>
-	<tr><td> <input type = "submit" name = "BTN_MOD" value = "AJOUT D'UN PATIENT"></td></tr>
+	<tr><td> <input id = "bouton" type = "submit" name = "BTN_MOD" value = "Ajouter un patient"></td></tr>
 	</table> 
 </form>
 
-<br/> <a href="accueil.php"> Page d'accueil </a>
+
 
 <!--
 <?php
@@ -83,6 +70,9 @@ echo "<br /> TEST- ID_UTILISATEUR :". $_SESSION['ID_utilisateur'];
 </div>
 </body>
 </html>
+
+
+
 
 
 
