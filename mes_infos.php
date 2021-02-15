@@ -19,6 +19,8 @@ include("barr_navig.html");
 
 <?php
 include("connexion_bd.php");
+	
+echo "<center><h2> Mes informations </h2></center>";
 
 $req = $bdd -> prepare('SELECT * FROM tab_utilisateurs WHERE ID_prof = :ID_utilisateur AND NOT ID_prof = 999');
 $req->execute(array(':ID_utilisateur' => $_SESSION['ID_utilisateur']));
