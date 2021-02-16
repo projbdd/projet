@@ -29,7 +29,7 @@ if ($_SESSION['jourvis'] == "Visite initiale") {
 
 ?>
 
-// CHOIX DE L'ACTION A FAIRE : VOIR/SUPPRIMER/MODIFIER UNE VISITE
+<!-- CHOIX DE L'ACTION A FAIRE : VOIR/SUPPRIMER/MODIFIER UNE VISITE-->
 <form method="POST" action="patient3.php">
 	<input id = "bouton" type="submit" value="Voir les informations sur cette visite">
 </form>
