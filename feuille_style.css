@@ -1,72 +1,95 @@
-/* Navbar container */
-.navbar {
-  overflow: hidden;
-  background-color: #333;
-  font-family: Arial;
-}
-
-/* Links inside the navbar */
-.navbar a {
-  float: right;
-  font-size: 16px;
-  color: white;
+/* Page de connexion */
+#connec {
+  margin : 0 auto;
+  border: solid 2px;
   text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
+  width: fit-content;
 }
 
-/* The dropdown container */
-.dropdown {
-  float: right;
-  overflow: hidden;
+#connec1 {
+  margin: auto;
 }
 
-/* Dropdown button */
-.dropdown .dropbtn {
-  font-size: 16px;
-  border: none;
-  outline: none;
-  color: white;
-  padding: 14px 16px;
-  background-color: inherit;
-  font-family: inherit; /* Important for vertical align on mobile phones */
-  margin: 0; /* Important for vertical align on mobile phones */
+#bg_connect {
+  background-image: url('ophtalmo.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
-/* Add a red background color to navbar links on hover */
-.navbar a:hover, .dropdown:hover .dropbtn {
-  background-color: red;
+h1 {
+  text-align: center;
 }
 
-/* Dropdown content (hidden by default) */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
+/* BARRE DE NAVIGATION */
+	/* "Contenant" de la barre de navigation */
+	.navbar {
+	  overflow: hidden;
+	  background-color: #333;
+	  font-family: Arial;
+	}
 
-/* Links inside the dropdown */
-.dropdown-content a {
-  float: inherit;
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-}
+	/* Liens dans la barre de navigation */
+	.navbar a {
+	  float: right;
+	  font-size: 16px;
+	  color: white;
+	  text-align: center;
+	  padding: 14px 16px;
+	  text-decoration: none;
+	}
 
-/* Add a grey background color to dropdown links on hover */
-.dropdown-content a:hover {
-  background-color: #ddd;
-}
+	/* Contenant du bouton déroulant */
+	.dropdown {
+	  float: right;
+	  overflow: hidden;
+	}
 
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
-  display: block;
-}
+	/* Bouton déroulant */
+	.dropdown .dropbtn {
+	  font-size: 16px;
+	  border: none;
+	  outline: none;
+	  color: white;
+	  padding: 14px 16px;
+	  background-color: inherit;
+	  font-family: inherit; /* Important for vertical align on mobile phones */
+	  margin: 0; /* Important for vertical align on mobile phones */
+	}
+
+	/* Fond rouge quand on passe le curseur */
+	.navbar a:hover, .dropdown:hover .dropbtn {
+	  background-color: red;
+	}
+
+	/* Contenu du bouton dérulant (par défaut : caché) */
+	.dropdown-content {
+	  display: none;
+	  position: absolute;
+	  background-color: #f9f9f9;
+	  min-width: 160px;
+	  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	  z-index: 1;
+	}
+
+	/* Liens dans le bouton déroulant */
+	.dropdown-content a {
+	  float: inherit;
+	  color: black;
+	  padding: 12px 16px;
+	  text-decoration: none;
+	  display: block;
+	  text-align: left;
+	}
+
+	/* Fond gris quand on passe le curseur sur les liens du bouton déroulant */
+	.dropdown-content a:hover {
+	  background-color: #ddd;
+	}
+
+	/* Dérouler les éléments du bouton au passage du curseur */
+	.dropdown:hover .dropdown-content {
+	  display: block;
+	}
 
 /* Page d'accueil */
 #table1 {
@@ -202,7 +225,3 @@
 select > option[value=""] {
     display: none;
 }
-
-
-
-
