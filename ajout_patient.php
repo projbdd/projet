@@ -19,7 +19,7 @@ include("barr_navig.html");
 // connexion  à la base de données
 include("connexion_bd.php");
 
-
+// requete pour insérer une nouvelle ligne de patient avec les infos de la page précédente
 $requete = $bdd -> prepare('insert into tab_patient values(:p_num_dossier, :p_date_debut_suivi, :p_nom, :p_pren, :p_adressage, :p_typ_consul, :p_sexe, :p_date_nais, :p_csp, :p_ethnie, :p_com_ou_pays_nais, :p_anne_dec_kc, :p_lat_man, :p_tabagisme_actif, :p_nb_cig_jr, :p_nb_annees, :p_tabagisme_passif, :p_situ_od, :p_situ_og)');
 
 $requete -> execute(array(':p_num_dossier' => $_SESSION['nouveaunum'], 
@@ -42,6 +42,8 @@ $requete -> execute(array(':p_num_dossier' => $_SESSION['nouveaunum'],
 							':p_situ_od' => $_POST['KOD'], 
 							':p_situ_og' => $_POST['KOG']));
 
+// si l'insertion s'est bien passé : message pour dire ok
+// l'ajour d'un nouveau patient entraine l'ajour d'une première visite de suivi
 if ($requete != null){
 	echo "</br> Le patient avec le numéro de dossier ".htmlspecialchars($_SESSION['nouveaunum'])." à été ajouté avec succès ! </br>";
 	echo " Pour finaliser sa création, veuillez remplir une fiche de suivi :</br></br>";
