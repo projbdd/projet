@@ -16,9 +16,10 @@
 <div class = "main">
 	
 <?php 
-
+// RECUPERATION DE LA DATE DE VISITE DE LA PAGE PRECEDENTE
 $_SESSION['jourvis']= htmlspecialchars($_POST['jourvis']);
 
+// AFFICHAGE DE LA VISITE SELECTIONNEE
 if ($_SESSION['jourvis'] == "Visite initiale") {
   echo "<br/> Vous avez sélectionné la visite initiale du patient numéro <strong>".$_SESSION['numerodoss']."</strong>. <br/>";
 } else {
@@ -28,7 +29,7 @@ if ($_SESSION['jourvis'] == "Visite initiale") {
 
 ?>
 
-
+// CHOIX DE L'ACTION A FAIRE : VOIR/SUPPRIMER/MODIFIER UNE VISITE
 <form method="POST" action="patient3.php">
 	<input id = "bouton" type="submit" value="Voir les informations sur cette visite">
 </form>
