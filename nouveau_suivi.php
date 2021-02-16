@@ -33,9 +33,9 @@ include("connexion_bd.php");
 <form method="POST" action="ajout_visite.php">
 	<fieldset><legend><h3>Ajout d'une nouvelle visite</h3></legend>
 		Type de consultation : <select name="typeconsult">
-			<option value="0">Premier diagnostic</option>
-			<option value="1">Premier avis</option>
-			<option value="2">Second ou énième avis</option>
+			<option value="1">Suivi</option>
+			<option value="2">Contactologie</option>
+			<option value="3">Chirurgie</option>
 		</select></br>
 		Date  : <input name='date' type="datetime-local"></br>
 		Signes fonctionnels et détails : <input name='sign_fonc'></br>
