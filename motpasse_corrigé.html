@@ -5,22 +5,26 @@
 	<head>
 		<meta charset="utf-8" />	
 		<title>PAGE DE CONNEXION</title>
+		<link rel="stylesheet" media="screen" href="feuille_style.css">
 </head>
-<body>
+<body id = "bg_connect">
+
+	<h1 id = "welcome"> Equipe de suivi des kératocones</h1>
+
+	<form method="POST" action="mdptestsql_corrigé.php">
+
+	<fieldset id = 'connec'><legend><h3> IDENTIFICATION </h3></legend>
+	<table id = "connec1">
+	<tr><td><b> Utilisateur : </b></td><td><INPUT NAME="utilisateur" TYPE="text"/> </td></tr>
+	<tr><td><b>Mot de passe : </b></td><td><INPUT NAME="motpasse" TYPE="password"/></td></tr>
+	</table>
+
+	<br>
+	<input type="submit" name="BTN_OK" value="ACCES SITE"/> 
+
+	</fieldset> <br /> 
+	</form>
 
 
-<form method="POST" action="mdptestsql_corrigé.php">
-
-<fieldset><legend><h4> IDENTIFICATION </h4></legend>
-<table>
-<tr> <td> Utilisateur : </td><td><INPUT NAME="utilisateur" TYPE="text"/> </td></tr>
-<tr><td>Mot de passe : </td><td><INPUT NAME="motpasse" TYPE="password"/></td></tr>
-</table> 
-
-</br>
-<input type="submit" name="BTN_OK" value="ACCES SITE"/> 
-
-</fieldset> <br /> 
-</form>
 </body>
 </html>
