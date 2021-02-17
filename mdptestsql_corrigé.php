@@ -31,17 +31,17 @@ if (isset($_POST['BTN_OK'])) // le bouton Accès site a été activé
 			if ($ligne["Type"]=="Med")
 			{
 				$_SESSION['ID_utilisateur'] = $ligne['ID_prof'];	
-				// La fonction header() permet de renvoyer directement à la page d'accueil sans afficher une page intermédiaire 
+				// La fonction header() permet de renvoyer directement à la page d'accueil sans afficher de page intermédiaire 
 				header("Location: accueil.php");						
 			}
 			
-			else if ($ligne["Type"]=="NA")
+			else if ($ligne["Type"]=="NA") // Ce type d'utilisateur n'a pas accès au serveur
 			{
-				echo "<br/><h3>Vous n'avez plus accès au serveur. </h3>";
+				echo "<br/><h3>Vous n'avez plus accès au serveur.</h3>";
 				echo "<a href = 'motpasse_corrigé.html'>Retour</a>";
 			}
 			
-			else
+			else // Lien vers l'espace Data Manager
 			{
 				header("Location: EspaceDataM.php");
 			}
@@ -49,16 +49,15 @@ if (isset($_POST['BTN_OK'])) // le bouton Accès site a été activé
 			
 		else 
 		{ 
-			echo "<br/><h3>Ce n'est pas le bon mot de passe </h3>";
-			echo "<h4>Attention ".htmlspecialchars($_POST['utilisateur'])." !</h4> ";
-			echo "<a href='motpasse_corrigé.html'> Nouvel Essai </a> "; // Permet de retourner sur la saisie du mot de passe
+			echo "<br/><h3>Mot de passe incorrect.</h3>";
+			echo "<a href='motpasse_corrigé.html'> Retour </a> "; 
 		}
 	} 
 		
 	else  
 	{ 
-		echo "<br/><h3>Utilisateur inconnu </h3> ";
-		echo "<a href='motpasse_corrigé.html'> Nouvel Essai </a> "; // Permet de retourner sur la saisie du mot de passe
+		echo "<br/><h3>Utilisateur inconnu. </h3> ";
+		echo "<a href='motpasse_corrigé.html'> Retour </a> "; 
 	}
 
 	$req->closeCursor() ;
