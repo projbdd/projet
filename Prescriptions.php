@@ -1,5 +1,6 @@
 <?php session_start()?>
 
+<!-- PAGE DE GRACE Z.-->
 
 <html>
 <head>
@@ -37,8 +38,13 @@ include("barr_navig.html");
         if ($presc) { // Vérifier si l'utilisateur a bien été trouvé
 		
             echo "<h2> Prescriptions associées au dossier numéro ".$_SESSION['numerodoss']." </h2>";
-            echo "<a href = 'mes_patients.php'>Retour à la sélection du patient</a> </br>
-                 <a href = 'patient2.php'>Retour à la page du patient</a></br>";
+        ?>
+        
+        <form method="POST" action="form_presc.php">
+		<input id = "bouton" type="submit" value="Ajouter une prescription">
+		</form>
+
+		<?php
                 
             while ($presc) {
 
@@ -112,17 +118,35 @@ include("barr_navig.html");
                 
             }
 
-        } else {
-            
-            echo "</br><h3> Pas de prescription de lentilles pour ce patient. </h3></br></br>";
-            echo "<a href = 'mes_patients.php'>Retour à la sélection du patient</a></br>";
-            echo "<a href = 'patient2.php'>Retour à la page du patient </a></br>";
-        } 
+        } else { 
+        	echo "</br><h3> Pas de prescription de lentilles pour ce patient. </h3>"
+        	?>      
+        	
+       	 	<form method="POST" action="form_presc.php">
+			<input id = "bouton" type="submit" value="Ajouter une prescription">
+			</form>
+			
+		<?php
+        } ?>
+        
+    <!-- Lien vers d'autres pages -->
+    <table id = end_table>
+	<tr id = end_page>
+	<td><a href = 'mes_patients.php'>Retour à la sélection du patient</a> </br></td>
+	<td> &nbsp;&nbsp; </td>
+	<td> <a href = 'patient2.php'>Retour à la page du patient</a></br> </td>
+	</tr>
+	</table>
 
-    ?>
-
+    
 </div>
 
+
 </body>
+
+
+   
 </html>
+
+
 
