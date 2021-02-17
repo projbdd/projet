@@ -69,7 +69,7 @@ $ligne = $req -> fetch();
 		
 		<tr><td><b>Puissance : </b></td><td><input name="puissance" type = "number" step="0.01"></td></tr>
 		
-		<tr><td><b>Commentaire :</b></td><td> <input name="comment" type = "text"></td></tr>
+		<tr><td><b>Commentaire :</b></td><td> <textarea name="comment" rows="5" cols="20"></textarea></td></tr>
 		</table>
 
 		<br/><br/></br><input type = "submit" value = "Ajouter cette prescription"/>
