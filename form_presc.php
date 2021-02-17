@@ -32,11 +32,11 @@ $ligne = $req -> fetch();
 
 <form method="POST" action="ajout_presc.php">
 
-	<fieldset id = "fset"><legend><h3> Ajout d'une prescription </h3></legend>
+	<fieldset id = "connec" ><legend><h3> Ajout d'une prescription </h3></legend>
 	
 		<?php echo " Numéro de dossier : ".$_SESSION['numerodoss']."</br></br>"; ?>
 		
-	<table>		
+	<table id = connec1>		
 		
 		<tr><td><b> Date : </b></td><td><input name='datep' type="datetime-local" required></td></tr>
 		
