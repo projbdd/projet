@@ -1,5 +1,7 @@
 <?php  session_start(); ?>
 
+<!-- PAGE DE GRACE Z.-->
+
 <html>
 <head>
 		<meta charset="utf-8" />
@@ -16,13 +18,14 @@
 include("connexion_bd.php");
 
 
-
+// Requête qui ressort les utilisateurs autres que le DM et le médecin connecté
 $req = $bdd -> prepare('SELECT * FROM tab_utilisateurs  
 WHERE NOT ID_prof = :ID_utilisateur
 AND NOT ID_prof = 999');
 $req->execute(array(':ID_utilisateur' => $_SESSION['ID_utilisateur']));
 ?>
 
+<!-- Affichage des médecin sous forme d'une liste déroulante -->
 <br/>
 <form method="POST" action="infos_coll.php">
     <select id="selectbox" name="autre_med">
@@ -43,13 +46,9 @@ $req->execute(array(':ID_utilisateur' => $_SESSION['ID_utilisateur']));
     </select>
 	<input id = "bouton" type = "submit" name = "BTN_MED" value = "Valider">
 
-
-
-
-
 <!--
 <?php
-//TEST
+//TEST de variable session
 echo "<br /> TEST- ID_UTILISATEUR :". $_SESSION['ID_utilisateur'];
 ?>
 -->
