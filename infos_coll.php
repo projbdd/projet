@@ -68,17 +68,6 @@ if (isset($_POST['BTN_MED']))
 
 ?>
 
-<!-- Lien vers autres pages-->
-
-<table id = end_table>
-<tr id = end_page>
-	<td><a href="mes_collègues.php"> Mes collègues</a></td>
-	<td> &nbsp;&nbsp; </td>
-	<td><a href="mes_infos.php"> Mes informations </a></td> 
-</tr>
-</table>
-
-
 <!--
 <?php
 //TEST
@@ -87,6 +76,18 @@ echo "<br /> TEST- ID_SELECTION :". $_SESSION['autre'];
 ?>
 -->
 	
+</div>
+	
+
+<!-- Lien vers autres pages-->
+<div  id = end_table>
+<table>
+<tr id = end_page>
+<td><a href="mes_collègues.php"> Mes collègues</a></td>
+<td> &nbsp;&nbsp; </td>
+<td><a href="mes_infos.php"> Mes informations </a></td> 
+</tr>
+</table>
 </div>
 
 </body>
