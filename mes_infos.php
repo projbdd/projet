@@ -1,68 +1,93 @@
-<?php  session_start();?>
+<?php  session_start(); ?>
+
+<!-- PAGE DE GRACE Z.
+code similaire à mes_infos.php-->
 
 <html>
-<head>
+	<head>
 		<meta charset="utf-8" />
-		<title> Mes informations  </title>
+		<title> Informations collègue </title>
 	<link rel="stylesheet" media="screen" href="feuille_style.css">
 </head>
 <body>
 
-<?php
-//Barre de navigation 
-include("barr_navig.html");
-?>
-    
+<?php include("barr_navig.html");?>
     
 <!-- Reste de la page-->
 <div class = "main">
 
 <?php
+
 include("connexion_bd.php");
 	
-echo "<center><h2> Mes informations </h2></center>";
-
-$req = $bdd -> prepare('SELECT * FROM tab_utilisateurs WHERE ID_prof = :ID_utilisateur AND NOT ID_prof = 999');
-$req->execute(array(':ID_utilisateur' => $_SESSION['ID_utilisateur']));
 
 
-//Cherche index à partir de la 2e colonne, donc le 2e élement du array
-$ligne = $req->fetch(); 
-
-//Cherche index à partir du premier élement du array
-$label = array("Nom", "Prénom", "Age", "Téléphone"); 
-
-if ($ligne)
-{
-	echo "<br/> <br/> <table id = infoMed >";
-	for ($i=0;$i<=3;$i++)
+// Le bouton Valider a été activé
+if (isset($_POST['BTN_MED'])) 
+{	
+	// Enregistrement du médecin choisi en variable session
+	$_SESSION['autre'] = htmlspecialchars($_POST['autre_med']); 
+	
+	// Rester sur la page tant qu'un médecin n'est pas sélectionné
+	if ($_SESSION['autre'] == "Sélectionner votre collègue")
+	
 	{
-		echo "<tr id = infoMed ><td><strong>".$label[$i]." : </strong> </td>  <td>".$ligne[$i+1]."</td></tr>";
-
+		header("Location: mes_collègues.php");	
 	}
-	echo "</table>";
+	
+	// Si un médecin est sélectionné
+	else {
+	
+		echo "<fieldset id = 'connec'><legend><h3> MON/MA COLLÈGUE </h3></legend>";
+		
+		//Sélectionner les informations du médecin autre que le médecin utilisateur
+		$req = $bdd -> prepare('SELECT * FROM tab_utilisateurs WHERE ID_prof = :ID_utilisateur');
+		$req->execute(array(':ID_utilisateur' => $_SESSION['autre']));
+	
+		$ligne = $req -> fetch();
+	
+		$label = array("Nom", "Prénom", "Age", "Téléphone");
+	
+		if ($ligne)
+		{
+			echo "<table id = connec1 >";
+			for ($i=0;$i<=3;$i++)
+			{
+				echo "<tr id = infoMed ><td><strong>".$label[$i]." : </strong> </td>  <td>".$ligne[$i+1]."</td></tr>";
+			}
+			echo "</table>";
+		}
+		
+	
+		$req->closeCursor() ;
+		
+		echo "</fieldset>";
+	} 	
+
 }
 
-$req->closeCursor() ;
 ?>
 
+<!-- Lien vers autres pages-->
 
 <table id = end_table>
 <tr id = end_page>
-	<td><a href="mes_patients.php"> Mes patients</a></td>
+	<td><a href="mes_collègues.php"> Mes collègues</a></td>
 	<td> &nbsp;&nbsp; </td>
-	<td><a href="mes_collègues.php"> Mes collègues </a></td>
-	</tr>
+	<td><a href="mes_infos.php"> Mes informations </a></td> 
+</tr>
 </table>
-
 
 
 <!--
 <?php
+//TEST
 echo "<br /> TEST- ID_UTILISATEUR :". $_SESSION['ID_utilisateur'];
+echo "<br /> TEST- ID_SELECTION :". $_SESSION['autre'];
 ?>
 -->
-
+	
 </div>
+
 </body>
 </html>
