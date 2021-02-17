@@ -36,7 +36,7 @@
 
         if($message) {
             while($message) {
-                echo "</br>".htmlspecialchars($message['Prenom'])." ".htmlspecialchars($message['Nom'])." n'aura plus accès au site et à ses fonctionnalités. Voulez-vous continuer? </br></br>";
+                echo "</br><h4>".htmlspecialchars($message['Prenom'])." ".htmlspecialchars($message['Nom'])." n'aura plus accès au site et à ses fonctionnalités. Voulez-vous continuer? </h4></br>";
                 $message = $affiche -> fetch();
             }
 
@@ -46,7 +46,7 @@
             </form>";
 
         } else {
-            echo "</br> Cet utilisateur n'est pas répertorié dans le serveur. </br></br>";
+            echo "</br><h3> Cet utilisateur n'est pas répertorié dans le serveur. </h3></br>";
             echo "<a href = 'EspaceDataM.php'>Réessayer</a>";
         }
     ?>
