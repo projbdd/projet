@@ -7,7 +7,7 @@
 
 session_start();
 
-header ("Location: motpasse_corrigé.html");
+header ("Location: 1_CONNEXION.html");
 
 session_destroy();
 
