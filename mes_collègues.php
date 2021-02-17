@@ -32,14 +32,13 @@ $req->execute(array(':ID_utilisateur' => $_SESSION['ID_utilisateur']));
         <option selected="selected"> Sélectionner votre collègue </option>
         <?php
         $ligne = $req->fetch();
-        while ($ligne)
-        	{	
-        		foreach($ligne as $item)
-        			{
-            			echo "<option value=".$ligne['ID_prof'].">".$ligne['Nom']." ".$ligne['Prenom']."</option>";
-            			$ligne = $req->fetch();
-        			}
+        while ($ligne) {	
+        	foreach($ligne as $item)
+        	{
+            	echo "<option value=".$ligne['ID_prof'].">".$ligne['Nom']." ".$ligne['Prenom']."</option>";
+            	$ligne = $req->fetch();
         	}
+        }
         $req->closeCursor() ;
         
         ?>
