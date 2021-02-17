@@ -39,7 +39,7 @@ $requete -> execute(array(':l_numdoss'  => $_SESSION['numerodoss'],
 						':l_comment' => $_POST['comment']));
 
 // Indique que l'insertion a bien été effectuée
-echo "<h3> La prescription du patient ".$_SESSION['numerodoss']." à bien été pris en compte !</h3> <br/>";
+echo "<h3> La prescription du patient ".$_SESSION['numerodoss']." à bien été prise en compte !</h3> <br/>";
 
 ?>
 	
