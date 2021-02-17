@@ -137,10 +137,18 @@
         } else {
             echo "Ce patient n'a effectué aucune chirurgie.";
         }
-
-        echo "</br></br></br><a href = 'mes_patients.php'>Retour à la sélection du patient</a></br>";
-        echo "<a href = 'patient2.php'>Retour à la page du patient </a></br>";
+        
     ?>
+	
+<table id = end_table>
+<tr id = end_page>
+<td><a href = 'mes_patients.php'>Retour à la sélection du patient</a> </br></td>
+<td> &nbsp;&nbsp; </td>
+<td> <a href = 'patient2.php'>Retour à la page du patient</a></br> </td>
+</tr>
+</table>
+
+
 
 </div>
 
