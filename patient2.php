@@ -76,7 +76,7 @@ echo "Selectionnez une visite sur laquelle vous voulez des informations, ou sur 
 <!-- selection de la visite que l'on veut voir -->
 <form method="POST" action="action_visite.php">
     <select id = "selectbox" name="jourvis">
-        <option selected="selected">Date de la visite</option>
+        <!-- <option selected="selected">Date de la visite</option> -->
         <?php
         $jour = $requete->fetch();
         while ($jour)
