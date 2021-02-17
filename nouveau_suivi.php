@@ -76,8 +76,8 @@ include("connexion_bd.php");
 			<option value="4">Constament</option>
 		</select></br>
 		Port de lentilles : <select name="lentilles">
-			<option value="0"> Oui </option>
-			<option value="1"> Non </option>
+			<option value="1"> Oui </option>
+			<option value="0"> Non </option>
 		</select></br>
 		Adaptation aux lentilles : <select name="adapt">
 			<option value="1">Première adaptation </option>
