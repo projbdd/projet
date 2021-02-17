@@ -32,9 +32,9 @@ $_SESSION['nouveaunum'] = $numero['max']+0.00001;
 	<fieldset><legend><h3>Ajout d'un nouveau patient</h3></legend>
 		<!-- Affichage du numéro de patient que l'on a récupéré -->
 		<?php echo "Le nouveau patient portera le numéro : ".$_SESSION['nouveaunum'].".</br></br>"; ?>
-		Date du début du suivi : <input name='datedeb' type="datetime-local"></br>
-		Nom : <input name='nom'></br>
-		Prénom : <input name="pren"></br>
+		Date du début du suivi : <input name='datedeb' type="datetime-local" required></br>
+		Nom : <input name='nom' required></br>
+		Prénom : <input name="pren" required></br>
 		Type d'adressage : <select name="adress">
 			<option value="0">Non adressé</option>
 			<option value="1">Adressé par un généraliste</option>
@@ -49,7 +49,7 @@ $_SESSION['nouveaunum'] = $numero['max']+0.00001;
 			<option value="1">Masculin</option>
 			<option value="2">Féminin</option>
 		</select></br>
-		Date de naissance : <input name='ddnaiss' type="datetime-local"></br>
+		Date de naissance : <input name='ddnaiss' type="datetime-local" required></br>
 		Catégorie socio-professionnelles : <select name="csp">
 			<option value="1">Agriculteurs indépendants</option>
 			<option value="2">Artisans, commerçants et chefs d'entreprise</option>
@@ -66,7 +66,7 @@ $_SESSION['nouveaunum'] = $numero['max']+0.00001;
 			<option value="4">Arabe</option>
 			<option value="5">Autre</option>
 		</select></br>
-		Commune ou pays de naissance : <input name="compays"></br>
+		Commune ou pays de naissance : <input name="compays" required></br>
 		Année de la detection du keratocone : <input name="anneedete" type="number" min='0' value ="2010"></br>
 		Latéralité manuelle : <select name="lateralite">
 			<option value="1">Droitier</option>
