@@ -1,5 +1,7 @@
 <?php  session_start(); ?>
 
+<!-- PAGE DE GRACE Z.-->
+
 <html>
 <head>
 <meta charset="utf-8" />
@@ -17,11 +19,11 @@ include("barr_navig.html");
 <div class = "main">
 
 <?php
-
+// Connection à la base
 include("connexion_bd.php");
 
 
-// Requete qui cherche toutes les informations des patients traités par le medecin utilisateur 
+// Requête qui cherche toutes les informations des patients traités par le médecin utilisateur 
 $req = $bdd -> prepare('SELECT tab_patient.* FROM tab_suivi 
 INNER JOIN tab_patient ON tab_suivi.N_dossier = tab_patient.Num_dossier 
 INNER JOIN tab_utilisateurs ON tab_suivi.ID_med= tab_utilisateurs.ID_prof
@@ -30,6 +32,9 @@ ORDER BY tab_patient.Num_dossier, tab_patient.Nom, tab_patient.Pren');
 $req->execute(array(':ID_utilisateur' => $_SESSION['ID_utilisateur']));
 
 ?>
+<!-- Affiche les patients en forme d'une liste déroulante  
+L'activation du bouton nous permettera de récupérer le numéro de dossier du patient sélectionné
+-->
 
 <br/>
 <form method="POST" action="patient2.php">
