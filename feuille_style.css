@@ -227,3 +227,8 @@ h1 {
 select > option[value=""] {
     display: none;
 }
+
+/* Mise en page de fieldsets */ 
+#fset {
+ display:inline; 
+}
