@@ -1,3 +1,5 @@
+<!-- Page rédigée par Antoine -->
+
 <?php session_start(); ?>
 <html>
 	<head>
