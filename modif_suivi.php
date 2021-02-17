@@ -439,7 +439,7 @@ if ($_POST['variable']== 'Photophobie'){
 
 if ($_POST['variable']== 'Vision_ddblee'){
 	echo"<form method='POST' action='modif2suivi.php'>
-	Nouvelle valeur - Vision_ddblee : <select name='VAL_Vision_ddblee'>
+	Nouvelle valeur - Vision dédoublée : <select name='VAL_Vision_ddblee'>
 			<option value='0'> Non </option>
 			<option value='-1'> Oui </option>
 		</select>
