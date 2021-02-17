@@ -32,14 +32,14 @@ include("connexion_bd.php");
  
 <form method="POST" action="ajout_visite.php">
 	<fieldset><legend><h3>Ajout d'une nouvelle visite</h3></legend>
-		Type de consultation : <select name="typeconsult">
+		Type de consultation : <select name="typeconsult" required >
 			<option value="1">Suivi</option>
 			<option value="2">Contactologie</option>
 			<option value="3">Chirurgie</option>
 		</select></br>
-		Date  : <input name='date' type="datetime-local"></br>
+		Date  : <input name='date' type="datetime-local" required></br>
 		Signes fonctionnels et détails : <input name='sign_fonc'></br>
-		BAV Rapide : <select name="BAVrap">
+		BAV Rapide : <select name="BAVrap" >
 			<option value="0"> Non </option>
 			<option value="-1"> Oui </option>
 		</select></br>
@@ -68,18 +68,18 @@ include("connexion_bd.php");
 			<option value="-1"> Oui </option>
 		</select></br>
 		Autres symptomes : <input name='autres_det'></br>
-		Frottement occulaires : <select name="frott">
+		Frottement occulaires : <select name="frott" required>
 			<option value="0">Pas du tout</option>
 			<option value="1">Un peu</option>
 			<option value="2">Modérement </option>
 			<option value="3">Beaucoup</option>
 			<option value="4">Constament</option>
 		</select></br>
-		Port de lentilles : <select name="lentilles">
+		Port de lentilles : <select name="lentilles" required>
 			<option value="1"> Oui </option>
 			<option value="0"> Non </option>
 		</select></br>
-		Adaptation aux lentilles : <select name="adapt">
+		Adaptation aux lentilles : <select name="adapt" >
 			<option value="1">Première adaptation </option>
 			<option value="2"> Contrôle lentille adaptée CRNK </option>
 			<option value="3">Contrôle lentille non adaptée CRNK</option>
