@@ -32,7 +32,7 @@ $ligne = $req -> fetch();
 
 <form method="POST" action="ajout_presc.php">
 
-	<fieldset><legend><h3> Ajout d'une prescription </h3></legend>
+	<fieldset id = "fset"><legend><h3> Ajout d'une prescription </h3></legend>
 	
 		<?php echo " Numéro de dossier : ".$_SESSION['numerodoss']."</br></br>"; ?>
 		
