@@ -140,6 +140,9 @@
         
     ?>
 
+</div>
+	
+
 <div id = end_table>
 <table>
 <tr id = end_page>
@@ -148,9 +151,6 @@
 <td> <a href = 'patient2.php'>Retour à la page du patient</a></br> </td>
 </tr>
 </table>
-</div>
-
-
 </div>
 
 </body>
