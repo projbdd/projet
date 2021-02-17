@@ -1,7 +1,6 @@
 <?php  session_start(); ?>
 
-<!-- PAGE DE GRACE Z.
-code similaire à mes_infos.php-->
+<!-- PAGE DE GRACE Z.-->
 
 <html>
 	<head>
