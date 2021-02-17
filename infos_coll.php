@@ -1,6 +1,8 @@
 <?php  session_start(); ?>
 
-<!DOCTYPE html>
+<!-- PAGE DE GRACE Z.
+code similaire à mes_infos.php-->
+
 <html>
 	<head>
 		<meta charset="utf-8" />
@@ -18,50 +20,55 @@
 
 include("connexion_bd.php");
 	
-echo "<center><h2>Mon collègue </h2></center>";
 
-//le bouton Valider a été activé
+
+// Le bouton Valider a été activé
 if (isset($_POST['BTN_MED'])) 
 {	
+	// Enregistrement du médecin choisi en variable session
 	$_SESSION['autre'] = htmlspecialchars($_POST['autre_med']); 
 	
+	// Rester sur la page tant qu'un médecin n'est pas sélectionné
 	if ($_SESSION['autre'] == "Sélectionner votre collègue")
 	
 	{
 		header("Location: mes_collègues.php");	
 	}
 	
+	// Si un médecin est sélectionné
 	else {
 	
-
-	$req = $bdd -> prepare('SELECT * FROM tab_utilisateurs WHERE ID_prof = :ID_utilisateur');
-	$req->execute(array(':ID_utilisateur' => $_SESSION['autre']));
+		echo "<fieldset id = 'connec'><legend><h3> MON/MA COLLÈGUE </h3></legend>";
+		
+		//Sélectionner les informations du médecin autre que le médecin utilisateur
+		$req = $bdd -> prepare('SELECT * FROM tab_utilisateurs WHERE ID_prof = :ID_utilisateur');
+		$req->execute(array(':ID_utilisateur' => $_SESSION['autre']));
 	
-	$ligne = $req -> fetch();
+		$ligne = $req -> fetch();
 	
-	$label = array("Nom", "Prénom", "Age", "Téléphone");
+		$label = array("Nom", "Prénom", "Age", "Téléphone");
 	
-	if ($ligne)
-	{
-		echo "<br/> <br/> <table id = infoMed >";
-		for ($i=0;$i<=3;$i++)
+		if ($ligne)
 		{
-			echo "<tr><td><strong>".$label[$i]." : </strong> </td>  <td>".$ligne[$i+1]."</td></tr>";
-
+			echo "<table id = connec1 >";
+			for ($i=0;$i<=3;$i++)
+			{
+				echo "<tr id = infoMed ><td><strong>".$label[$i]." : </strong> </td>  <td>".$ligne[$i+1]."</td></tr>";
+			}
+			echo "</table>";
 		}
-		echo "</table>";
-	}
-
+		
 	
-	$req->closeCursor() ;
-	
-	} //from else 
-	
+		$req->closeCursor() ;
+		
+		echo "</fieldset>";
+	} 	
 
 }
 
 ?>
 
+<!-- Lien vers autres pages-->
 
 <table id = end_table>
 <tr id = end_page>
