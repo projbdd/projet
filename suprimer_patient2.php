@@ -32,6 +32,12 @@ $ligne = $requete2->fetch();
 {echo "<br/><h2>Le patient ".$_SESSION['numerodoss']." a été supprimée. </h2></br>";}
 
 ?>
+	
+</br>
+<form method="POST" action="mes_patients.php">
+	<input id="bouton" type="submit" value="Chercher un autre patient">
+</form>
+</br>
 
 </div>
 </body>
