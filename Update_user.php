@@ -46,19 +46,19 @@
                         
                         $req2 -> execute(array(':p_user' => $_SESSION['ID'], ':p_mdp' => htmlspecialchars($_POST['new'])));
 
-                        echo "</br> Le mot de passe de ".$_SESSION['prenom']." ".$_SESSION['nom']," a bien été changé. </br></br>";
+                        echo "</br><h3> Le mot de passe de ".$_SESSION['prenom']." ".$_SESSION['nom']," a bien été changé. </h3></br>";
                         echo '<a href = "EspaceDataM.php"/>Retour</a>';
 
                     } else { 
-                        echo "</br> Les deux mots de passe doivent être identiques.</br></br>";
+                        echo "</br><h3> Les deux mots de passe doivent être identiques.</h3></br>";
                         echo '<a href = "EspaceDataM.php"/>Réessayer</a>';
                     }
                 } else { 
-                    echo "</br> Aucune correspondance pour ce mot de passe.</br></br>";
+                    echo "</br><h3> Aucune correspondance pour ce mot de passe.</h3></br>";
                     echo '<a href = "EspaceDataM.php"/>Réessayer</a>';
                 }
             } else { 
-                echo "</br> Cet utilisateur n'a pas été trouvé.</br>";
+                echo "</br><h3> Cet utilisateur n'a pas été trouvé.</h3></br>";
                 echo '<a href = "EspaceDataM.php"/>Réessayer</a>';
             };
 
@@ -79,7 +79,7 @@
             if ($ligne) { // On vérifie que la requête s'effectue ...
                 if (htmlspecialchars($_POST['new']) == htmlspecialchars($_POST['old'])) { // ... et que la nouvelle fonction correspond à l'ancienne 
                         
-                    echo "</br> Veuillez modifier la fonction.</br></br>";
+                    echo "</br><h3> Veuillez modifier la fonction.</h3></br>";
                     echo '<a href = "EspaceDataM.php"/>Réessayer</a>';
 
                 } else { 
@@ -90,13 +90,13 @@
                         
                     $req2 -> execute(array(':p_user' => $_SESSION['ID'], ':p_type' => htmlspecialchars($_POST['new'])));
 
-                    echo "</br> La fonction de ".$_SESSION['prenom']." ".$_SESSION['nom']," a bien été changée.</br></br>";
+                    echo "</br><h3> La fonction de ".$_SESSION['prenom']." ".$_SESSION['nom']," a bien été changée.</h3></br>";
                     echo '<a href = "EspaceDataM.php"/>Retour</a>';
                 }
 
             } else { 
                 
-                echo "</br> Cet utilisateur n'a pas été trouvé.</br></br>";
+                echo "</br><h3> Cet utilisateur n'a pas été trouvé.</h3></br>";
                 echo '<a href = "EspaceDataM.php"/>Réessayer</a>';
             };
 
@@ -123,19 +123,19 @@
                         
                         $req2 -> execute(array(':p_user' => $_SESSION['ID'], ':p_new' => htmlspecialchars($_POST['new'])));
 
-                        echo "</br> Le ".$_SESSION['info']." a bien été changé.</br></br>";
+                        echo "</br><h3> Le ".$_SESSION['info']." a bien été changé.</h3></br>";
                         echo '<a href = "EspaceDataM.php"/>Retour</a>';
 
                     } else { 
-                        echo "</br> Les informations doivent être identiques.</br></br>";
+                        echo "</br><h3> Les informations doivent être identiques.</h3></br>";
                         echo '<a href = "EspaceDataM.php"/>Réessayer</a>';
                     }
                 } else { 
-                    echo "</br> Cette information ne figure pas dans la base.</br></br>";
+                    echo "</br><h3> Cette information ne figure pas dans la base.</h3></br>";
                     echo '<a href = "EspaceDataM.php"/>Réessayer</a>';
                 }
             } else { 
-                echo "</br> Cet utilisateur n'a pas été trouvé.</br></br>";
+                echo "</br><h3> Cet utilisateur n'a pas été trouvé.</h3></br>";
                 echo '<a href = "EspaceDataM.php"/>Réessayer</a>';
             };
 
