@@ -46,7 +46,7 @@ L'activation du bouton nous permettera de récupérer le numéro de dossier du p
         {	
         	foreach($ligne as $item)
         	{
-            		echo "<option value=".$ligne['Num_dossier'].">".$ligne['Num_dossier']." ".$ligne['Nom']." ".$ligne['Pren']."</option>";
+            		echo "<option value=".$ligne['Num_dossier'].">"."No : ".$ligne['Num_dossier']." - Nom : ".$ligne['Nom']." ".$ligne['Pren']."</option>";
             		$ligne = $req->fetch();
         	}
         }
