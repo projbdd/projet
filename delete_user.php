@@ -40,7 +40,7 @@
 
             $req2 -> execute(array(':p_user' => $_SESSION['del_user'], ':p_type' => 'NA'));
             
-            echo "</br> Cet utilisateur a été supprimé du serveur. </br></br>";
+            echo "</br><h3> Cet utilisateur a été supprimé du serveur. </h3>";
             echo "<a href='EspaceDataM.php'>Retour</a> ";
         } 
         
