@@ -63,7 +63,7 @@
 				}
 
 			} else {
-				echo "</br> Cet utilisateur n'est pas répertorié dans le serveur. </br></br>";
+				echo "</br><h3> Cet utilisateur n'est pas répertorié dans le serveur. </h3></br>";
 				echo "<a href = 'EspaceDataM.php'>Réessayer</a>";
 			}
 		
@@ -97,7 +97,7 @@
 				}
 
 			} else {
-				echo "</br> Cet utilisateur n'est pas répertorié dans le serveur. </br></br>";
+				echo "</br><h3> Cet utilisateur n'est pas répertorié dans le serveur. </h3></br>";
 				echo "<a href = 'EspaceDataM.php'>Réessayer</a>";
 			}
 
@@ -115,7 +115,7 @@
 				$_SESSION['prenom'] = htmlspecialchars($message['Prenom']);
 
 				while($message) {
-					echo "</br> Modifier le ".$_SESSION['info']." de ".$_SESSION['prenom']." ".$_SESSION['nom'].".</br></br>";
+					echo "</br><h3> Modifier le ".$_SESSION['info']." de ".$_SESSION['prenom']." ".$_SESSION['nom'].".</h3></br>";
 					$message = $affiche -> fetch();
 
 					echo "<form method = 'POST' action = 'Update_user.php' >
@@ -131,7 +131,7 @@
 				}
 
 			} else {
-				echo "</br> Cet utilisateur n'est pas répertorié dans le serveur. </br></br>";
+				echo "</br><h3> Cet utilisateur n'est pas répertorié dans le serveur. </h3></br>";
 				echo "<a href = 'EspaceDataM.php'>Réessayer</a>";
 			}	
 		}
