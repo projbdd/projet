@@ -1,6 +1,5 @@
 <?php session_start()?>
 
-<!-- PAGE DE GRACE Z.-->
 
 <html>
 <head>
