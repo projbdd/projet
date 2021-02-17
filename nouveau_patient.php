@@ -18,15 +18,19 @@ include("barr_navig.html");
 <div class = "main">
 	
 <?php
+// connexion à la base de données
 include("connexion_bd.php");
+	
+// Récupération d'un nouveau numéro de patient de manière automatique
 $req = $bdd -> prepare('SELECT max(Num_dossier)+1 as max FROM tab_patient');
 $req -> execute();
 $numero = $req -> fetch();
 $_SESSION['nouveaunum'] = $numero['max'];
 ?>
-
+<!-- Formulaire pour créer le nouveau patient-->
 <form method="POST" action="ajout_patient.php">
 	<fieldset><legend><h3>Ajout d'un nouveau patient</h3></legend>
+		<!-- Affichage du numéro de patient que l'on a récupéré -->
 		<?php echo "Le nouveau patient portera le numéro : ".$_SESSION['nouveaunum'].".</br></br>"; ?>
 		Date du début du suivi : <input name='datedeb' type="datetime-local"></br>
 		Nom : <input name='nom'></br>
@@ -89,6 +93,7 @@ $_SESSION['nouveaunum'] = $numero['max'];
 			<option value="2">Frustre</option>
 			<option value="3">Avérée</option>
 		</select></br></br>
+		<!-- Bouton pour valider l'ajout du patient -->
 		<input type = "submit" value = "Ajouter ce patient"/></br>
 	</fieldset>
 </form>
