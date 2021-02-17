@@ -187,7 +187,7 @@ else {
 		$requeteada = $bdd -> prepare('select Type_CS_Adaptation from tab_codage_adaptation where Code_CS_Adaptation= :p_codeada');
 		$requeteada -> execute(array(':p_codeada' => $ligne['Adaptation_lentille']));
 		$fadap = $requetada->fetch;
-		echo "Frottement des yeux : ", $adap, " </br>";
+		echo "Adaptation : ", $adap, " </br>";
 	}	
 	else { echo "Port de lentilles : NON </br>";}
 	
