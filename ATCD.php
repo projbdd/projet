@@ -41,18 +41,18 @@
             
             while ($perso) {
 
-                echo "<p class = 'tab'>Antécédent de type ".$perso['Categorie_ATCD']." : ".$perso['Type_ATCD']."</br>";
+                echo "<p><ul><li>Antécédent de type ".$perso['Categorie_ATCD']." : ".$perso['Type_ATCD']."</br>";
                     
                 if ($perso['Traitement_act'] == '-1' && $perso['Traitement_passe'] == '-1') {
-                    echo "<em>Traitement passé + en cours.</em></p>";
+                    echo "<em>Traitement passé + en cours.</em></li></ul>";
                 } else if ($perso['Traitement_passe'] == '-1' && ($perso['Traitement_act'] == '0' || $perso['Traitement_act'] == NULL)) {
-                    echo "<em>Traitement passé.</em></p>";
+                    echo "<em>Traitement passé.</em></li></ul>";
                 } else if (($perso['Traitement_passe'] == '0' || $perso['Traitement_act'] == NULL) && $perso['Traitement_act'] == '-1') {
-                    echo "<em>En cours de traitement.</em></p>";
+                    echo "<em>En cours de traitement.</em></li></ul>";
                 } else if ($perso['Traitement_passe'] == '0' && $perso['Traitement_act'] == '0') {
-                    echo "<em>Pas de traitement (ni passé ni actuel).</em></p>";
+                    echo "<em>Pas de traitement (ni passé ni actuel).</em></li></ul>";
                 } else if ($perso['Traitement_passe'] == NULL && $perso['Traitement_act'] == NULL) {
-                    echo "<em>Aucune information sur le traitement.</em></p>";
+                    echo "<em>Aucune information sur le traitement.</em></li></ul>";
                 }
 
                 $perso = $req_pers -> fetch(); 
@@ -80,7 +80,7 @@
         if ($famil) { // Vérifier si le patient a bien été trouvé
 
             while ($famil) {
-                echo "<p class = 'tab'>".$famil['ATCD_familier']." relevé chez le/la : ".$famil['Parente']."</p>";
+                echo "<ul><li>".$famil['ATCD_familier']." relevé chez le/la : ".$famil['Parente']."</li></ul>";
                 
                 $famil = $req_fam -> fetch();
             }
@@ -126,9 +126,8 @@
                     </table></br></br>";
                 } else {
                     echo "<tr><td colspan='2'><em>Aucun commentaire</em></td></tr>
-                    </table></br></br>";
+                    </table>";
                 }
-                    
                 
                     $chir = $req_chir -> fetch();
             }

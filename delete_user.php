@@ -9,7 +9,7 @@
 
 <body>
 
-<!-- Partie du haut -->
+<!-- Barre de navigation -->
 <div class="navbar">
     <a href="motpasse_corrigé.html">Déconnexion</a>
     <div class="dropdown">
@@ -31,14 +31,14 @@
         // Récupération des données de la première ligne de la requête
         $ligne = $req->fetch();
 
-        if ($ligne) { // permet de tester si l'utilisateur a bien été trouvé
+        if ($ligne) { // On vérifie si la requête s'effectue
             $req2 = $bdd -> prepare("update tab_utilisateurs
             set Type = :p_type
             where ID_user = :p_user");
 
             $req2 -> execute(array(':p_user' => $_SESSION['del_user'], ':p_type' => 'NA'));
             
-            echo "</br> Cet utilisateur a été supprimé du serveur. </br>";
+            echo "</br> Cet utilisateur a été supprimé du serveur. </br></br>";
             echo "<a href='EspaceDataM.php'>Retour</a> ";
         } 
         

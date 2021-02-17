@@ -27,7 +27,7 @@
         // On sauvegarde cette valeur pour la page d'après
         $_SESSION['del_user'] = htmlspecialchars($_POST['del_user']);
 
-        // Pour avoir un message de confirmation
+        // Pour avoir un message de confirmation, ou d'avertissement
         $conf = "SELECT Nom, Prenom FROM tab_utilisateurs WHERE ID_user = '".$_SESSION['del_user']."'";
         $affiche = $bdd -> query($conf);
         $message = $affiche -> fetch();
@@ -39,12 +39,12 @@
             }
 
             echo "<form method = 'POST' action = 'delete_user.php'>
-            <input type = 'submit' value = 'Confirmer'></br>
+            <input type = 'submit' value = 'Confirmer'></br></br>
             <a href = 'EspaceDataM.php'>Retour</a>
             </form>";
 
         } else {
-            echo "</br> Cet utilisateur n'est pas répertorié dans le serveur. </br>";
+            echo "</br> Cet utilisateur n'est pas répertorié dans le serveur. </br></br>";
             echo "<a href = 'EspaceDataM.php'>Réessayer</a>";
         }
     ?>

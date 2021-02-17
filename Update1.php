@@ -8,7 +8,7 @@
 	</head>
 <body>
 
-<!-- Partie du haut -->
+<!-- Barre de navigation -->
 <div class="navbar">
     <a href="motpasse_corrigé.html">Déconnexion</a>
     <div class="dropdown">
@@ -21,20 +21,20 @@
 
 		// Connexion à la base de données
 		include("connexion_bd.php");
-
 		
 		// On stocke l'information a modifier pour l'utiliser dans le fichier PHP correspondant au formulaire qui suit
 		$_SESSION['info'] = htmlspecialchars($_POST['selec']); 
 		$_SESSION['ID'] = htmlspecialchars($_POST['ID_to_update']);
 		
-		if ($_SESSION['info'] == 'Type') {
+		// Si on souhaite modifier la fonction de l'utilisateur
+		if ($_SESSION['info'] == 'Type') { 
 
 			// Pour avoir le message de confirmation
 			$conf = "SELECT Nom, Prenom FROM tab_utilisateurs WHERE ID_user = '".$_SESSION['ID']."'";
 			$affiche = $bdd -> query($conf);
 			$message = $affiche -> fetch();
 		
-			if($message) {
+			if($message) { // On vérifie que l'identifiant renseigné est bien dans la base
 
 				$_SESSION['nom'] = htmlspecialchars($message['Nom']); 
 				$_SESSION['prenom'] = htmlspecialchars($message['Prenom']);
@@ -55,15 +55,51 @@
 								</select></br></br>
 								<input type = 'submit' value = 'Confirmer'/></br>
 							</fieldset>
-						</form>";
+						</form>
+						</br>";
 					echo "<a href = 'EspaceDataM.php'>Retour</a>";
 				}
 
 			} else {
-				echo "</br> Cet utilisateur n'est pas répertorié dans le serveur. </br>";
+				echo "</br> Cet utilisateur n'est pas répertorié dans le serveur. </br></br>";
+				echo "<a href = 'EspaceDataM.php'>Réessayer</a>";
+			}
+		
+		// Si on souhaite modifier le mot de passe de l'utilisateur
+		} else if ($_SESSION['info'] == 'Mot de passe') {
+
+			// Pour avoir le message de confirmation ou d'avertissement
+			$conf = "SELECT Nom, Prenom FROM tab_utilisateurs WHERE ID_user = '".$_SESSION['ID']."'";
+			$affiche = $bdd -> query($conf);
+			$message = $affiche -> fetch();
+		
+			if($message) { // On vérifie que l'identifiant renseigné est bien dans la base
+
+				$_SESSION['nom'] = htmlspecialchars($message['Nom']); 
+				$_SESSION['prenom'] = htmlspecialchars($message['Prenom']);
+
+				while($message) { 
+					echo "</br> Modifier le mot de passe de ".$_SESSION['prenom']." ".$_SESSION['nom'].".</br></br>";
+					$message = $affiche -> fetch();
+
+					echo "<form method = 'POST' action = 'Update_user.php' >
+					<fieldset>
+						Ancien mot de passe <input name = 'old' type = 'password'></br></br>
+						Nouveau mot de passe <input name = 'new' type = 'password'></br></br>
+						Confirmer mot de passe <input name = 'confirm' type = 'password'></br></br>
+						<input type = 'submit' value = 'Confirmer'/></br>
+					</fieldset>
+					</form>
+					</br>";
+					echo "<a href = 'EspaceDataM.php'>Retour</a>";
+				}
+
+			} else {
+				echo "</br> Cet utilisateur n'est pas répertorié dans le serveur. </br></br>";
 				echo "<a href = 'EspaceDataM.php'>Réessayer</a>";
 			}
 
+		// Pour toutes les autres modifications
 		} else {
 
 			// Pour avoir le message de confirmation
@@ -71,7 +107,7 @@
 			$affiche = $bdd -> query($conf);
 			$message = $affiche -> fetch();
 			
-			if($message) {
+			if($message) { // On vérifie que l'identifiant renseigné est bien dans la base
 
 				$_SESSION['nom'] = htmlspecialchars($message['Nom']); 
 				$_SESSION['prenom'] = htmlspecialchars($message['Prenom']);
@@ -87,12 +123,13 @@
 								Confirmer ".$_SESSION['info']." <input name = 'confirm'></br></br>
 								<input type = 'submit' value = 'Confirmer'/></br>
 							</fieldset>
-						</form>";
+						</form>
+						</br>";
 					echo "<a href = 'EspaceDataM.php'>Retour</a>";
 				}
 
 			} else {
-				echo "</br> Cet utilisateur n'est pas répertorié dans le serveur. </br>";
+				echo "</br> Cet utilisateur n'est pas répertorié dans le serveur. </br></br>";
 				echo "<a href = 'EspaceDataM.php'>Réessayer</a>";
 			}	
 		}

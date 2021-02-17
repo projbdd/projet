@@ -9,7 +9,7 @@
 
 <body>
     
-<!-- Partie du haut -->
+<!-- Barre de navigation -->
 <div class="navbar">
     <a href="motpasse_corrigé.html">Déconnexion</a>
     <div class="dropdown">
@@ -21,6 +21,7 @@
     <table class = "center"></br></br>
         <th colspan = "3"><h1> Espace Data-Manager </h1></th>
         <tr>
+
             <td> <!-- Formulaire pour rajouter un nouvel utilisateur -->
                 <form method = "POST" action = "Ajout_user.php">
                     <fieldset><legend><h2> Ajout d'un nouvel utilisateur </h2></legend>
@@ -31,11 +32,13 @@
                         Age <input name = "ageMed" type ="number" min="0" max="9999999999"><br><br><br>
                         <b>Création de son espace personnel </b></br><br>
                         Type d'utilisateur <select name = "typeMed">
-                            <option> Médecin </option>
-                            <option> Data Manager </option>
+                            <option selected = "yes"> Choissisez une fonction </option>
+                            <option value = "Med"> Médecin </option>
+                            <option value = "DM"> Data Manager </option>
                         </select></br><br>
                         Définir l'identifiant <input name = "ID"><br><br>
                         Définir le mot de passe </strong><input type = "password" name = "pwd"><br></br>
+                        Confirmer le mot de passe </strong><input type = "password" name = "conf_pwd"><br></br>
                         <input type = "submit" value = "Confirmer"/>
                     </fieldset>
                 </form>
