@@ -162,13 +162,13 @@ else {
 		echo "Signes fonctionnels détaillés : ", $ligne['Signes_Fonctionnels _details'], " </br>";}
 	else{echo"Signes fonctionnels détaillés : non renseignés </br>";}
 	
-	if ($ligne['BAVrapide']=="1") { echo "BAV rapide (< 1 an) </br>";}
-	if ($ligne['BAVlente']=="1") { echo "BAV lente </br>";}
-	if ($ligne['Halos_noct']=="1") { echo "Halos nocturnes </br>";}
-	if ($ligne['Photophobie']=="1") { echo "Photophobie </br>";}
-	if ($ligne['Vision_ddblee']=="1") { echo "Vision dédoublée </br>";}
-	if ($ligne['Rougeurs_ocul']=="1") { echo "Rougeurs oculaires </br>";}
-	if ($ligne['Autre']=="1") { echo "Autre : ", $ligne['Autre_det'], " </br>";}
+	if ($ligne['BAVrapide']=="-1") { echo "BAV rapide (< 1 an) </br>";}
+	if ($ligne['BAVlente']=="-1") { echo "BAV lente </br>";}
+	if ($ligne['Halos_noct']=="-1") { echo "Halos nocturnes </br>";}
+	if ($ligne['Photophobie']=="-1") { echo "Photophobie </br>";}
+	if ($ligne['Vision_ddblee']=="-1") { echo "Vision dédoublée </br>";}
+	if ($ligne['Rougeurs_ocul']=="-1") { echo "Rougeurs oculaires </br>";}
+	if ($ligne['Autre']=="-1") { echo "Autre : ", $ligne['Autre_det'], " </br>";}
 	
 	if ($ligne['Frottement_yeux'] !=""){
 		$requetefrot = $bdd -> prepare('select Frottement_oculaire from tab_codage_frottement_oculaire where Code_Frottement= :p_codefrot');
