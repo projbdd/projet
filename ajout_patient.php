@@ -1,3 +1,5 @@
+<!--Page rédigée par Antoine -->
+
 <?php session_start(); ?>
 <html>
 	<head>
@@ -16,12 +18,13 @@ include("barr_navig.html");
 <div class = "main">
 	
 <?php
-// connexion  à la base de données
+// connexion à la base de données
 include("connexion_bd.php");
 
 // requete pour insérer une nouvelle ligne de patient avec les infos de la page précédente
 $requete = $bdd -> prepare('insert into tab_patient values(:p_num_dossier, :p_date_debut_suivi, :p_nom, :p_pren, :p_adressage, :p_typ_consul, :p_sexe, :p_date_nais, :p_csp, :p_ethnie, :p_com_ou_pays_nais, :p_anne_dec_kc, :p_lat_man, :p_tabagisme_actif, :p_nb_cig_jr, :p_nb_annees, :p_tabagisme_passif, :p_situ_od, :p_situ_og)');
 
+// exécution de la requête
 $requete -> execute(array(':p_num_dossier' => $_SESSION['nouveaunum'], 
 							':p_date_debut_suivi' => $_POST['datedeb'], 
 							':p_nom' => $_POST['nom'], 
@@ -53,7 +56,16 @@ if ($requete != null){
 		<input id = "bouton" type="submit" value="Première fiche de suivi"/> <br />  
 	</form>
 	<?php
-}
+} 
+	// si problème : message d'avertissement et on invite le médecin à réessayer en retournant sur la page précédente
+	else {
+	echo "</br> L'ajout du patient avec le numéro de dossier ".htmlspecialchars($_SESSION['nouveaunum'])." n'a pas abouti, veuillez réessayer. </br>";
+	?>
+	<form method="POST" action="nouveau_patient.php">
+		<input id = "bouton" type="submit" value="Ajouter un nouveau patient"/> <br />  
+	</form>
+	<?php
+	}
 
 ?>
 
