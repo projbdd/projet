@@ -1,4 +1,5 @@
-  
+<!-- Page rédigée par Antoine -->  
+
 <?php session_start(); ?>
 <html>
 	<head>
@@ -17,8 +18,10 @@ include("barr_navig.html");
 <div class = "main">
 
 <?php 
+// connexion à la base de données
 include("connexion_bd.php");
 
+// requete pour changer l'identifiant du médecin de tous les suivis du patient pour le rendr einvisible à l'affichage
 $requete1 = $bdd -> prepare('UPDATE tab_suivi SET ID_med="999" WHERE N_dossier=:p_dossdoss;');
 $requete1 -> execute(array(':p_dossdoss' => $_SESSION['numerodoss']));
 
