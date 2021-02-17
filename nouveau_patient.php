@@ -22,10 +22,10 @@ include("barr_navig.html");
 include("connexion_bd.php");
 	
 // Récupération d'un nouveau numéro de patient de manière automatique
-$req = $bdd -> prepare('SELECT max(Num_dossier)+1 as max FROM tab_patient');
+$req = $bdd -> prepare('SELECT max(Num_dossier) as max FROM tab_patient');
 $req -> execute();
 $numero = $req -> fetch();
-$_SESSION['nouveaunum'] = $numero['max'];
+$_SESSION['nouveaunum'] = $numero['max']+0.00001;
 ?>
 <!-- Formulaire pour créer le nouveau patient-->
 <form method="POST" action="ajout_patient.php">
@@ -95,6 +95,9 @@ $_SESSION['nouveaunum'] = $numero['max'];
 		</select></br></br>
 		<!-- Bouton pour valider l'ajout du patient -->
 		<input type = "submit" value = "Ajouter ce patient"/></br>
+<?php 
+	echo "</br><i>Note : Tous les champs doivent être renseignés pour que le patient soit correctement ajouté dans la abse de données. </i><br/>";
+	?>
 	</fieldset>
 </form>
 
