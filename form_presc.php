@@ -63,7 +63,7 @@ $ligne = $req -> fetch();
         
         <tr><td><b>Autre nom : </b></td><td> <input name="autrep" type="text" ></td></tr>
 					
-		<tr><td><b>Ro : </b></td><td><input name="ro_val"  type = "number" step="0.01"></td></tr>
+		<tr><td><b>Rayon de courbure : </b></td><td><input name="ro_val"  type = "number" step="0.01"></td></tr>
 		
 		<tr><td><b>Diamètre : </b></td><td><input name="dia"  type = "number" step="0.01"></td></tr>
 		
