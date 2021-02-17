@@ -58,7 +58,7 @@ $requete -> execute(array(':p_numdossier' => $_SESSION['numerodoss']));
 </form>
 </br>
 <form method="POST" action="prescriptions.php">
-	<input id = "bouton" type="submit" value="Voir les préscriptions du patient">
+	<input id = "bouton" type="submit" value="Voir les prescriptions du patient">
 </form>
 </br>
 <form method="POST" action="nouveau_suivi.php">
