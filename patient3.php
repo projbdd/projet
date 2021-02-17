@@ -1,3 +1,4 @@
+<!-- Page rédigée par Antoine -->
 
 <?php session_start(); ?>
 
@@ -21,16 +22,21 @@ include("barr_navig.html");
 <div class = "main">
 
 <?php 
+// connexion à la base de données
 include("connexion_bd.php");
 
+// affichage de la visite initiale
 if ($_SESSION['jourvis'] == "Visite initiale") {
 	
 	echo"<h2> Visite initiale</h2></br>";
-	
+	// requête et execution pour rechercher toutes les infos de la visite
 	$requete1 = $bdd->prepare('select * from tab_patient where Num_dossier= :p_numdossier');
 	$requete1->execute(array(':p_numdossier' => $_SESSION['numerodoss']));
 	$ligne = $requete1->fetch();
 	
+	// affichage des infos
+	// les requêtes intermédiaires permettent de récupérer les libéllés en clair des variables codées
+	// les condition 'if' permettent de regarder si les valeurs sont renseignées
 	echo "Numero de dossier : ", $ligne['Num_dossier'], " </br>";
 	
 	if ($ligne['Date_debut_suivi'] != ""){
@@ -141,7 +147,11 @@ if ($_SESSION['jourvis'] == "Visite initiale") {
 	
 
 }
+	
+	// affichage des visites de suivi
 else {
+	// les requêtes intermédiaires permettent de récupérer les libéllés en clair des variables codées
+	// les condition 'if' permettent de regarder si les valeurs sont renseignées
 	
 	echo"<h2> Visite à la date ".$_SESSION['jourvis']."</h2></br>";
 	
@@ -177,6 +187,7 @@ else {
 		echo "Frottement des yeux : ", $frotyeux['Frottement_oculaire'], " </br>";}
 	else {echo "Frottement des yeux : non renseigné </br>";}
 	
+	// l'affichage des infos lentilles uniquement si il y a porte lentille=oui
 	if($ligne['Port_lentille']=="1"){
 		echo "Port de lentilles : OUI </br>";
 		echo "Nombre d'heures de port de lentilles par jour : ", $ligne['Nb_hrL_jr'], "</br>";
@@ -195,6 +206,7 @@ else {
 
 
 ?>
+<!-- boutons pour retourner à la selection des patients ou des visites -->
 </br></br>
 <form method="POST" action="patient2.php">
 	<input id = "bouton" type="submit" value="Chercher une autre date">
