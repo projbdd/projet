@@ -24,7 +24,7 @@ include("connexion_bd.php");
 
 
 // Requête qui cherche toutes les informations des patients traités par le médecin utilisateur 
-$req = $bdd -> prepare('SELECT tab_patient.* FROM tab_suivi 
+$req = $bdd -> prepare('SELECT distinct tab_patient.* FROM tab_suivi 
 INNER JOIN tab_patient ON tab_suivi.N_dossier = tab_patient.Num_dossier 
 INNER JOIN tab_utilisateurs ON tab_suivi.ID_med= tab_utilisateurs.ID_prof
 WHERE tab_utilisateurs.ID_prof = :ID_utilisateur
