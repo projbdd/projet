@@ -38,7 +38,7 @@ $ligne = $req -> fetch();
 		
 	<table>		
 		
-		<tr><td><b> Date : </b></td><td><input name='datep' type="datetime-local"></td></tr>
+		<tr><td><b> Date : </b></td><td><input name='datep' type="datetime-local" required></td></tr>
 		
 		<tr><td><b>Oeil : </b></td><td> <select name="oeil">
 			<option value="1">Oeil droit</option>
@@ -61,15 +61,15 @@ $ligne = $req -> fetch();
         ?>
         </select></td></tr>
         
-        <tr><td><b>Autre nom : </b></td><td> <input name="autrep" type="text" ></td></tr>
+        <tr><td><b>Autre nom : </b></td><td> <input name="autrep" type="text" required ></td></tr>
 					
-		<tr><td><b>Rayon de courbure : </b></td><td><input name="ro_val"  type = "number" step="0.01"></td></tr>
+		<tr><td><b>Rayon de courbure : </b></td><td><input name="ro_val"  type = "number" step="0.01" required></td></tr>
 		
-		<tr><td><b>Diamètre : </b></td><td><input name="dia"  type = "number" step="0.01"></td></tr>
+		<tr><td><b>Diamètre : </b></td><td><input name="dia"  type = "number" step="0.01" required></td></tr>
 		
-		<tr><td><b>Puissance : </b></td><td><input name="puissance" type = "number" step="0.01"></td></tr>
+		<tr><td><b>Puissance : </b></td><td><input name="puissance" type = "number" step="0.01" required></td></tr>
 		
-		<tr><td><b>Commentaire :</b></td><td> <textarea name="comment" rows="5" cols="20"></textarea></td></tr>
+		<tr><td><b>Commentaire :</b></td><td> <textarea name="comment" rows="5" cols="20" required></textarea></td></tr>
 		</table>
 
 		<br/><br/></br><input type = "submit" value = "Ajouter cette prescription"/>
