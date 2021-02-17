@@ -28,19 +28,19 @@
                 <form method = "POST" action = "Ajout_user.php">
                     <fieldset><legend><h2> Ajout d'un nouvel utilisateur </h2></legend>
                         <!-- ID_prof <input name = "prof"></br> -->
-                        Nom <input name = "nomMed"><br><br>
-                        Prénom <input name = "prenomMed"><br><br>
-                        Téléphone <input name = "telMed"><br><br>
-                        Age <input name = "ageMed" type ="number" min="0" max="9999999999"><br><br><br>
+                        Nom <input name = "nomMed" required><br><br>
+                        Prénom <input name = "prenomMed" required><br><br>
+                        Téléphone <input name = "telMed" required><br><br>
+                        Age <input name = "ageMed" type ="number" min="0" max="9999999999" required><br><br><br>
                         <b>Création de son espace personnel </b></br><br>
-                        Type d'utilisateur <select name = "typeMed">
+                        Type d'utilisateur <select name = "typeMed" required>
                             <option selected = "yes"> Choissisez une fonction </option>
                             <option value = "Med"> Médecin </option>
                             <option value = "DM"> Data Manager </option>
                         </select></br><br>
-                        Définir l'identifiant <input name = "ID"><br><br>
-                        Définir le mot de passe </strong><input type = "password" name = "pwd"><br></br>
-                        Confirmer le mot de passe </strong><input type = "password" name = "conf_pwd"><br></br>
+                        Définir l'identifiant <input name = "ID" required><br><br>
+                        Définir le mot de passe </strong><input type = "password" name = "pwd" required><br></br>
+                        Confirmer le mot de passe </strong><input type = "password" name = "conf_pwd" required><br></br>
                         <input type = "submit" value = "Confirmer"/>
                     </fieldset>
                 </form>
@@ -49,7 +49,7 @@
             <td> <!-- Formulaire pour modifier les informations d'un utilisateur -->
                 <form method = "POST" action = "Update1.php" >
                     <fieldset><legend><h2> Modification des informations utilisateur </h2></legend>
-                        Identifiant <input name = "ID_to_update"></br></br>
+                        Identifiant <input name = "ID_to_update" required></br></br>
                             Modifier : <select name = "selec"> 
                             <option> Nom </option>
                             <option> Prenom </option>
@@ -65,7 +65,7 @@
             <td> <!-- Formulaire pour supprimer l'accès d'un utilisateur à la base -->
                 <form method = "POST" action = "Confirmation_del.php" enctype = "multipart/form-data">
                     <fieldset><legend><h2> Suppression d'un utilisateur </h2></legend>
-                        Saisir l'identifiant de l'utilisateur <input name="del_user"><br></br>
+                        Saisir l'identifiant de l'utilisateur <input name="del_user" required><br></br>
                         <input type="submit" value="Confirmer"/>
                     </fieldset>
                     </form>
