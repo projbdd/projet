@@ -55,16 +55,6 @@ $req->closeCursor() ;
 echo "</fieldset>";
 ?>
 
-<!-- Lien vers d'autres pages -->
-<table id = end_table>
-<tr id = end_page>
-	<td><a href="mes_patients.php"> Mes patients</a></td>
-	<td> &nbsp;&nbsp; </td>
-	<td><a href="mes_collègues.php"> Mes collègues </a></td>
-	</tr>
-</table>
-
-
 <!--
 <?php
 echo "<br /> TEST- ID_UTILISATEUR :". $_SESSION['ID_utilisateur'];
@@ -72,5 +62,18 @@ echo "<br /> TEST- ID_UTILISATEUR :". $_SESSION['ID_utilisateur'];
 -->
 
 </div>
+	
+
+<!-- Lien vers d'autres pages -->
+<div  id = end_table>
+<table>
+<tr id = end_page>
+<td><a href="mes_patients.php"> Mes patients</a></td>
+<td> &nbsp;&nbsp; </td>
+<td><a href="mes_collègues.php"> Mes collègues </a></td>
+</tr>
+</table>
+</div>
+
 </body>
 </html>
