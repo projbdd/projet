@@ -34,10 +34,9 @@ if (isset($_POST['BTN_PAT'])) // le bouton Valider de mes_patients.php
 
 // Reste sur la page tant qu'aucun patient n'est sélectionné	
 if ($_SESSION['numerodoss'] == "Sélectionnez votre patient")
-	
-	{
-		header("Location: mes_patients.php");	
-	}
+{
+	header("Location: mes_patients.php");	
+}
 	
 
 // Ne rien faire si $_SESSION['numerodoss'] est déja renseignée 
