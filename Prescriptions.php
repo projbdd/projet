@@ -41,7 +41,7 @@ include("barr_navig.html");
         
         <form method="POST" action="form_presc.php">
 		<input id = "bouton" type="submit" value="Ajouter une prescription">
-		</form>
+	</form>
 
 		<?php
                 
@@ -123,7 +123,7 @@ include("barr_navig.html");
         	
        	 	<form method="POST" action="form_presc.php">
 			<input id = "bouton" type="submit" value="Ajouter une prescription">
-			</form>
+		</form>
 			
 		<?php
         } ?>
