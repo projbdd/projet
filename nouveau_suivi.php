@@ -37,7 +37,7 @@ include("connexion_bd.php");
 			<option value="2">Contactologie</option>
 			<option value="3">Chirurgie</option>
 		</select></br>
-		Date  : <input name='date' type="datetime-local" required></br>
+		Date  : <input name='date' type="datetime-local" value ="2021-01-01T00:00" required></br>
 		Signes fonctionnels et détails : <input name='sign_fonc'></br>
 		BAV Rapide : <select name="BAVrap" >
 			<option value="0"> Non </option>
