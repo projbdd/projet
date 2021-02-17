@@ -140,7 +140,6 @@
         
     ?>
 
-</br>
 <table id = end_table>
 <tr id = end_page>
 <td><a href = 'mes_patients.php'>Retour à la sélection du patient</a> </br></td>
