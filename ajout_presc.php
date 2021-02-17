@@ -50,7 +50,7 @@ echo "<h3> La prescription du patient ".$_SESSION['numerodoss']." à bien été 
 	
 <table id = end_table>
 <tr id = end_page>
-<td><a href="Prescriptions.php"> Retour aux les prescriptions</a> </br></td>
+<td><a href="Prescriptions.php"> Retour aux prescriptions</a> </br></td>
 <td> &nbsp;&nbsp; </td>
 <td><a href = 'mes_patients.php'>Retour à la sélection du patient</a> </br></td>
 <td> &nbsp;&nbsp; </td>
