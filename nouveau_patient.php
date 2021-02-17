@@ -67,7 +67,7 @@ $_SESSION['nouveaunum'] = $numero['max']+0.00001;
 			<option value="5">Autre</option>
 		</select></br>
 		Commune ou pays de naissance : <input name="compays"></br>
-		Année de la detection du keratocone : <input name="anneedete" type="number"></br>
+		Année de la detection du keratocone : <input name="anneedete" type="number" min='0' value ="2010"></br>
 		Latéralité manuelle : <select name="lateralite">
 			<option value="1">Droitier</option>
 			<option value="2">Gaucher</option>
@@ -77,8 +77,8 @@ $_SESSION['nouveaunum'] = $numero['max']+0.00001;
 			<option value="1">Oui</option>
 			<option value="2">Non</option>
 		</select></br>
-		Nombre de cigarette fumées par jour : <input name="nbcigjour" type ="number"></br>
-		Nombre d'année à fumer : <input name="nbcigannee" type ="number"></br>
+		Nombre de cigarette fumées par jour : <input name="nbcigjour" type ="number" min='0' value ="0"></br>
+		Nombre d'année à fumer : <input name="nbcigannee" type ="number" min='0' value ="0"></br>
 		Tabagisme passif : <select name="tabacpass">
 			<option value="1">Oui</option>
 			<option value="2">Non</option>
@@ -96,7 +96,7 @@ $_SESSION['nouveaunum'] = $numero['max']+0.00001;
 		<!-- Bouton pour valider l'ajout du patient -->
 		<input type = "submit" value = "Ajouter ce patient"/></br>
 <?php 
-	echo "</br><i>Note : Tous les champs doivent être renseignés pour que le patient soit correctement ajouté dans la abse de données. </i><br/>";
+	echo "</br><i>Note : Tous les champs doivent être renseignés pour que le patient soit correctement ajouté dans la base de données. </i><br/>";
 	?>
 	</fieldset>
 </form>
