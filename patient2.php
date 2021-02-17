@@ -62,6 +62,10 @@ $requete -> execute(array(':p_numdossier' => $_SESSION['numerodoss']));
 </form>
 </br>
 
+<?php 
+echo "Selectionnez une visite sur laquelle vous voulez des informations, ou sur laquelle vous voulez faire des modifications : </br>";
+?>
+
 <form method="POST" action="action_visite.php">
     <select id = "selectbox" name="jourvis">
         <option selected="selected">Date de la visite</option>
