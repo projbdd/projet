@@ -55,7 +55,7 @@ include("connexion_bd.php");
 			<option value="0"> Non </option>
 			<option value="-1"> Oui </option>
 		</select></br>		
-		Vision DDBLEE : <select name="ddblee">
+		Vision dédoublée : <select name="ddblee">
 			<option value="0"> Non </option>
 			<option value="-1"> Oui </option>
 		</select></br>		
