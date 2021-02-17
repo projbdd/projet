@@ -1,3 +1,5 @@
+<!-- Page rédigée par Antoine -->
+
 <?php session_start(); ?>
 
 <html>
@@ -17,8 +19,11 @@ include("barr_navig.html");
 <div class = "main">
 
 <?php 
+	
+// connexion à la base de données
 include("connexion_bd.php");
 
+// permet de vérifier que le médecin veut réellement supprimer le patient
 echo "<h2>Voulez-vous vraiment supprimer le patient numéro ".$_SESSION['numerodoss']." ? </h2></br>";
 ?>
 </br>
