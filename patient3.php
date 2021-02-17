@@ -158,8 +158,8 @@ else {
 		echo "Type de consultation : ", $typecons['Type_CS'], " </br>";}
 	else {echo "Type de consultation : inconnu </br>";}
 	
-	if ($ligne['Signes_Fonctionnels _details'] != ""){
-		echo "Signes fonctionnels détaillés : ", $ligne['Signes_Fonctionnels _details'], " </br>";}
+	if ($ligne['Signes_Fonctionnels_details'] != ""){
+		echo "Signes fonctionnels détaillés : ", $ligne['Signes_Fonctionnels_details'], " </br>";}
 	else{echo"Signes fonctionnels détaillés : non renseignés </br>";}
 	
 	if ($ligne['BAVrapide']=="-1") { echo "BAV rapide (< 1 an) </br>";}
