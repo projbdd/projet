@@ -56,7 +56,7 @@ $_SESSION['nouveaunum'] = $numero['max'];
 		Ethnie : <select name="ethnie">
 			<option value="1">Caucasien</option>
 			<option value="2">Africain ou Afro-antillais</option>
-			<option value="3">Asiatique o Indien</option>
+			<option value="3">Asiatique ou Indien</option>
 			<option value="4">Arabe</option>
 			<option value="5">Autre</option>
 		</select></br>
