@@ -127,16 +127,18 @@ include("barr_navig.html");
 		}
 
     ?>
-   
+
+</div>
+	
 <!-- Lien vers d'autres pages -->
-<table id = end_table>
+<div id = end_table>
+<table>
 <tr id = end_page>
 <td><a href = 'mes_patients.php'>Retour à la sélection du patient</a> </br></td>
 <td> &nbsp;&nbsp; </td>
 <td> <a href = 'patient2.php'>Retour à la page du patient</a></br> </td>
 </tr>
 </table>
-
 </div>
 
 </body>
