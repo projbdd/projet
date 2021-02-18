@@ -102,8 +102,8 @@ include("connexion_bd.php");
 			<option value="1"> Non </option>
 		</select></td></tr>
 		
-		<tr><td><b>Nombre d'heure pendant lesquelles  </br> les lentilles sont portées par jour : </b></td><td><input name="nbhl" type="number" min="0" max="24" required></td></tr>
-		<tr><td><b>Nombre de jours pendant lesquels  </br> les lentilles sont portées par semaine : </b></td><td><input name="nbjl" type="number"min="0" max="7" required></td></tr>
+		<tr><td><b>Nombre d'heure pendant lesquelles  </br> les lentilles sont portées par jour : </b></td><td><input name="nbhl" type="number" min="0" max="24" value ="0" ></td></tr>
+		<tr><td><b>Nombre de jours pendant lesquels  </br> les lentilles sont portées par semaine : </b></td><td><input name="nbjl" type="number" min="0" max="7" value ="0" ></td></tr>
 		
 		</table>
 		
