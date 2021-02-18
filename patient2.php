@@ -97,10 +97,11 @@ echo "Selectionnez une visite sur laquelle vous voulez des informations, ou sur 
 </form>
 
 
-	
-<?php
-
-?>
+<table id = end_table>
+<tr id = end_page>
+<td><a href = 'mes_patients.php'>Retour à la sélection du patient</a> </br></td>
+</tr>
+</table>
 
 </div>
 
