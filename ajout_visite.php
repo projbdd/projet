@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8" />	
-		<title>Ajouter un nouveau patient </title>
+		<title>Ajouter une nouvelle visite </title>
 		<link rel="stylesheet" media="screen" href="feuille_style.css">
 </head>
 <body>
@@ -19,16 +19,14 @@ include("barr_navig.html");
 <?php
 // connexion  à la base de données
 include("connexion_bd.php");
-        $suivi = $bdd->prepare("SELECT max(ID_suivi)+1 as max FROM tab_suivi");
-        $suivi ->execute();;
-        $rep = $suivi->fetch();
-		$_max= $rep['max'];
+
+$suivi = $bdd->prepare("SELECT max(ID_suivi)+1 as max FROM tab_suivi");
+$suivi ->execute();;
+$rep = $suivi->fetch();
+$_max= $rep['max'];
+
 $numdoss=$_SESSION['numerodoss'];
 
-
-$requete1 = $bdd->prepare('select avg(nbsuivi) as moyenne from (select p.Num_dossier, count(s.ID_suivi) as nbsuivi from tab_suivi s inner join tab_patient p on s.N_dossier= p.Num_dossier where p.Sexe=1 group by p.Num_dossier ) AS T');
-$requete1->execute();
-$ligne1 = $requete1->fetch();
 
 $requete = $bdd -> prepare('insert into tab_suivi values(:p_id_suivi, :p_type_consult, :p_numdoss, :p_date, :p_sign_fonc, :p_BAV_rap, :p_BAV_lente, :p_Halo, :p_Photophobie, :p_ddblee, :p_rougeurs, :p_autre, :p_autre_det, :p_frott, :p_lentilles, :p_adapt, :p_tolerance, :p_nbhl, :p_nbjl, :p_idmed )');
 
@@ -51,20 +49,23 @@ $requete -> execute(array(':p_id_suivi' => $_max,
 							':p_tolerance' => $_POST['tolerance'], 
 							':p_nbhl' => $_POST['nbhl'], 
 							':p_nbjl' => $_POST['nbjl'], 
-							':p_idmed' => $_POST['idmed'] ) ); 
+							':p_idmed' => $_SESSION['ID_utilisateur'])); 
 
 
 if ($requete != null){
-	echo "</br> La visite numéro " .$_max." du ".$_POST['date']." du patient numéro ".$numdoss." à été ajoutée avec succès ! </br>";
+	echo "</br><h3> La visite numéro " .$_max." du ".$_POST['date']." du patient numéro ".$numdoss." à été ajoutée avec succès ! </h3></br>";
 }
 ?>
 
-<form method="POST" action="patient2.php">
-	<input id="bouton" type="submit" value="Choisir une autre date">
-</form>
 
-<form method="POST" action="mes_patients.php">
-	<input id="bouton" type="submit" value="Choisir un autre patient">
+<table id = end_table>
+<tr id = end_page>
+<td> <a href = 'patient2.php'>Retour à la page du patient</a></br> </td>
+<td> &nbsp;&nbsp; </td>
+<td><a href = 'mes_patients.php'>Retour à la sélection du patient</a> </br></td>
+</tr>
+</table>
+
 </form>
 </div>
 </body>
