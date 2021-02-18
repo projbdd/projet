@@ -84,7 +84,7 @@ $_SESSION['nouveaunum'] = $numero['max']+0.00001;
 			<option value="5">Autre</option>
 		</select></td></tr>
 		
-		<tr><td><b> Commune ou pays de naissance : </b></td><td><input name="compays" required></td></tr>
+		<tr><td><b> Commune ou pays de naissance : </b></td><td><input name="compays"></td></tr>
 		
 		<tr><td><b> Année de la detection du keratocone : </b></td><td><input name="anneedete" type="number" min='0' value ="2010"></td></tr>
 		
