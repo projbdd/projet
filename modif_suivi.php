@@ -1,5 +1,6 @@
 <?php session_start(); ?>
 <html>
+	<!--- KLERVI LE GALL --> 
 	<head>
 		<meta charset="utf-8" />	
 		<title>Modifier une visite </title>
@@ -23,9 +24,9 @@ include("connexion_bd.php");
  
 
 
-if ($_SESSION['jourvis'] == "Visite initiale") {
+if ($_SESSION['jourvis'] == "Visite initiale") { //ici on sépare visite initiale et visites de suivi car ce ne sont pas les mêmes tables
 	
-echo"<h2> Voici les informations de la visite initiale du patient ".$_SESSION['numerodoss']."</h2></br>";
+echo"<h2> Voici les informations de la visite initiale du patient ".$_SESSION['numerodoss']."</h2></br>"; //première partie : affichage des infos comme dans patient3
 	
 	$requete1 = $bdd->prepare('select * from tab_patient where Num_dossier= :p_numdossier');
 	$requete1->execute(array(':p_numdossier' => $_SESSION['numerodoss']));
@@ -140,7 +141,7 @@ echo"<h2> Voici les informations de la visite initiale du patient ".$_SESSION['n
 	}
 	
 	
-echo"<h2> Quelles sont les informations à modifier?</h2></br>";
+echo"<h2> Quelles sont les informations à modifier?</h2></br>"; // ensuite on demande quelle information est à modifier, et on traite la réponse sur la même page
 echo "<form method='POST' action=''>	
 		<select id='selectbox' name='variable'>
         <option selected='selected'> Sélectionner la variable </option>
@@ -164,9 +165,9 @@ echo "<form method='POST' action=''>
 
 	</form>  </br> ";
 	
-if(isset($_POST['variable'])){	
+if(isset($_POST['variable'])){	// cela permet d'attendre que la variable à modifier soit bien choisie avant de suivre le reste du code et donc évite les erreurs
 
-if ($_POST['variable']== 'Nom'){	
+if ($_POST['variable']== 'Nom'){	// pour chaque variable on demande la nouvelle valeur
 	echo"<form method='POST' action='modif2suivi.php'>
 			Nouvelle valeur - Nom : <input name='VAL_nom'>
 		<input id = 'bouton' type = 'submit' name = 'BTN_MED' value = 'Valider'> 
@@ -297,9 +298,9 @@ if ($_POST['variable']== 'Situation_init_KC_OG'){
 }
 }
 
-else {
+else { // partie suivi
 	
-echo"<h2> Voici les informations de la visite à la date ".$_SESSION['jourvis']." du patient ".$_SESSION['numerodoss']."</h2></br>";
+echo"<h2> Voici les informations de la visite à la date ".$_SESSION['jourvis']." du patient ".$_SESSION['numerodoss']."</h2></br>"; // de même affichage d'abord
 	
 	$requete2 = $bdd->prepare('select * from tab_suivi where N_dossier= :p_numdossier AND Date= :p_datecons');
 	$requete2->execute(array(':p_numdossier' => $_SESSION['numerodoss'], ':p_datecons' => $_SESSION['jourvis']));
@@ -355,7 +356,7 @@ echo"<h2> Voici les informations de la visite à la date ".$_SESSION['jourvis'].
 	
 	
 	
-echo"<h2> Quelles sont les informations à modifier?</h2></br>";
+echo"<h2> Quelles sont les informations à modifier?</h2></br>"; // liste déoroulante des variables
 echo "<form method='POST' action='modif_suivi.php'>	
 		<select id='selectbox' name='variable'>
         <option selected='selected'> Sélectionner la variable </option>
@@ -378,7 +379,7 @@ echo "<form method='POST' action='modif_suivi.php'>
     </select>
 			<input id = 'bouton' type = 'submit' name = 'BTN_MED' value = 'Valider'> 
 	</form> </br>";
-if(isset($_POST['variable'])){	
+if(isset($_POST['variable'])){	// on attend que ce soit bien choisi
 
 if ($_POST['variable']== 'Type_consult'){	
 	echo"<form method='POST' action='modif2suivi.php'>
@@ -498,6 +499,8 @@ if ($_POST['variable']== 'Adaptation_lentille'){
 			<option value='1'>Première adaptation </option>
 			<option value='2'> Contrôle lentille adaptée CRNK </option>
 			<option value='3'>Contrôle lentille non adaptée CRNK</option>
+			<option value='4'>Non concerné(e)</option>
+
 		</select>	
 		<input id = 'bouton' type = 'submit' name = 'BTN_MED' value = 'Valider'> 
 </form>";}
@@ -507,6 +510,8 @@ if ($_POST['variable']== 'Tolerance'){
 		Nouvelle valeur - Tolerance : <select name='VAL_Tolerance'>
 			<option value='0'>Oui </option>
 			<option value='1'> Non </option>
+			<option value='3'> Non concerné(e) </option>
+
 		</select>	
 		<input id = 'bouton' type = 'submit' name = 'BTN_MED' value = 'Valider'> 
 </form>";}
