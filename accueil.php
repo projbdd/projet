@@ -30,7 +30,7 @@
 
 		<table id = "table1">
 		<tr><th> Patients </th><th> Statistiques </th> </tr> <tr>
-			 <td>  <button name = patient><a href="mes_patients.php"> <img src=lun.jpg     height="250px" width="300px"> </a></button> </td>
+			 <td>  <button name = patient><a href="mes_patients.php"> <img src=lun.jpg     height="250px" width="300px"> </a></button> </td> <!-- Insertion des liens vers la page de statistiques et l'espace des patients via des images dans un tableau-->
 			<td id>  <button name = stat ><a href="page_stats.php"> <img src=stat.png     height="250px" width="300px"> </a></button>  </td>
 		</tr>
 		</table>
