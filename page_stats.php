@@ -223,7 +223,7 @@ $ligneethnie5t = $requeteethnie5t->fetch();
 
 
 ?>
-
+<!-- Création de la table, colone 1 pourcentages (proportion de personnes porteuses de lentilles, colone 2 nombre moyen de consultations -->
 
 <table id = 'stats'>
 	<tr><th></th><th> Proportions de lentilles </th><th> Nombre moyen de consultations  </th> </tr> 
