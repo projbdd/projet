@@ -72,7 +72,10 @@ $ligne = $req -> fetch();
 		<tr><td><b>Commentaire :</b></td><td> <textarea name="comment" rows="5" cols="20" required></textarea></td></tr>
 		</table>
 
-		<br/><br/></br><input type = "submit" value = "Ajouter cette prescription"/>
+		<br/><br/></br><input type = "submit" value = "Ajouter cette prescription"/></br>
+		
+		</br><i>Note : Tous les champs doivent être renseignés pour que la prescription soit correctement ajoutée dans la base de données. </i><br/>
+
 		
 	</fieldset> 
 </form>
