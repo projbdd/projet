@@ -125,7 +125,6 @@ $_SESSION['nouveaunum'] = $numero['max']+0.00001;
 		<!-- Bouton pour valider l'ajout du patient -->
 		</br></br><input type = "submit" value = "Ajouter ce patient"/></br>
 
-	</br><i>Note : Tous les champs doivent être renseignés pour que le patient soit correctement ajouté dans la base de données. </i><br/>
 
 	</fieldset>
 </form>
