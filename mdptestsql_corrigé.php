@@ -38,7 +38,7 @@ if (isset($_POST['BTN_OK'])) // le bouton Accès site a été activé
 			else if ($ligne["Type"]=="NA") // Ce type d'utilisateur n'a pas accès au serveur
 			{
 				echo "<br/><h3>Vous n'avez plus accès au serveur.</h3>";
-				echo "<a href = 'motpasse_corrigé.html'>Retour</a>";
+				echo "<a href = '1_CONNEXION.html'>Retour</a>";
 			}
 			
 			else // Lien vers l'espace Data Manager
@@ -50,14 +50,14 @@ if (isset($_POST['BTN_OK'])) // le bouton Accès site a été activé
 		else 
 		{ 
 			echo "<br/><h3>Mot de passe incorrect.</h3>";
-			echo "<a href='motpasse_corrigé.html'> Retour </a> "; 
+			echo "<a href = '1_CONNEXION.html'>Retour</a>";
 		}
 	} 
 		
 	else  
 	{ 
 		echo "<br/><h3>Utilisateur inconnu. </h3> ";
-		echo "<a href='motpasse_corrigé.html'> Retour </a> "; 
+		echo "<a href = '1_CONNEXION.html'>Retour</a>";
 	}
 
 	$req->closeCursor() ;
