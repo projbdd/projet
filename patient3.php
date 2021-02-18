@@ -199,7 +199,7 @@ else {
 		$requeteada = $bdd -> prepare('select Type_CS_Adaptation from tab_codage_adaptation where Code_CS_Adaptation= :p_codeada');
 		$requeteada -> execute(array(':p_codeada' => $ligne['Adaptation_lentille']));
 		$fadap = $requeteada->fetch();
-		echo "Adaptation : ", $fadap, " </br>";}
+		echo "Adaptation : ", $fadap['Type_CS_Adaptation'], " </br>";}
 	}	
 	else { echo "Port de lentilles : NON </br>";}
 	
