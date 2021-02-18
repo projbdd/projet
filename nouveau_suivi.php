@@ -95,11 +95,14 @@ include("connexion_bd.php");
 			<option value="1">Première adaptation </option>
 			<option value="2"> Contrôle lentille adaptée CRNK </option>
 			<option value="3">Contrôle lentille non adaptée CRNK</option>
+			<option value="4">Non concerné(e)</option>
 		</select></td></tr>
 		
 		<tr><td><b>Tolérance: </b></td><td><select name="tolerance">
 			<option value="0"> Oui </option>
 			<option value="1"> Non </option>
+			<option value="2"> Non concerné(e) </option>
+
 		</select></td></tr>
 		
 		<tr><td><b>Nombre d'heure pendant lesquelles  </br> les lentilles sont portées par jour : </b></td><td><input name="nbhl" type="number" min="0" max="24" value ="0" ></td></tr>
