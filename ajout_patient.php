@@ -53,8 +53,8 @@ $reqq -> execute(array(':p_nuum' => $_SESSION['nouveaunum']));
 $ligne = $reqq->fetch();
 
 if ($ligne != ""){
-	echo "</br> Le patient avec le numéro de dossier ".htmlspecialchars($_SESSION['nouveaunum'])." à été ajouté avec succès ! </br>";
-	echo " Pour finaliser sa création, veuillez remplir une fiche de suivi :</br></br>";
+	echo "<h3> Le patient avec le numéro de dossier ".htmlspecialchars($_SESSION['nouveaunum'])." à été ajouté avec succès ! </h3>";
+	echo "<h3> Pour finaliser sa création, veuillez remplir une fiche de suivi : </h3>";
 	$_SESSION['numerodoss']=$_SESSION['nouveaunum'];
 	?>
 	<form method="POST" action="nouveau_suivi.php">
