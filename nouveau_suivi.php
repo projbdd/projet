@@ -1,5 +1,6 @@
 <?php session_start(); ?>
 <html>
+	<!--- KLERVI LE GALL --> 
 	<head>
 		<meta charset="utf-8" />	
 		<title>Nouveau suivi</title>
@@ -95,13 +96,14 @@ include("connexion_bd.php");
 			<option value="1">Première adaptation </option>
 			<option value="2"> Contrôle lentille adaptée CRNK </option>
 			<option value="3">Contrôle lentille non adaptée CRNK</option>
-			<option value="4">Non concerné(e)</option>
+			<option value="4">Non concerné(e)</option> <!--- ajouté pour éviter de remplir de fausses valeurs --> 
 		</select></td></tr>
 		
 		<tr><td><b>Tolérance: </b></td><td><select name="tolerance">
 			<option value="0"> Oui </option>
 			<option value="1"> Non </option>
-			<option value="2"> Non concerné(e) </option>
+			<option value="2"> Non concerné(e) </option> 	<!--- ajouté pour éviter de remplir de fausses valeurs --> 
+
 
 		</select></td></tr>
 		
