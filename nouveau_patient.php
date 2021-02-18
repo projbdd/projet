@@ -73,6 +73,7 @@ $_SESSION['nouveaunum'] = $numero['max']+0.00001;
 			<option value="5">Employés</option>
 			<option value="6">Ouvriers  </option>
 			<option value="7">Retraités</option>
+			<option value="8">Autres</option>
 		</select></td></tr>
 		
 		<tr><td><b> Ethnie : </b></td><td><select name="ethnie">
