@@ -38,7 +38,7 @@ include("connexion_bd.php");
 		
 		<tr><td><b> Date  :  </b></td><td><input name='date' type="datetime-local" value ="2021-01-01T00:00"></td></tr>
 		
-		<tr><td><b>Signes fonctionnels et détails : </b></td><td><input name='sign_fonc' required></td></tr>
+		<tr><td><b>Signes fonctionnels et détails : </b></td><td><input name='sign_fonc' ></td></tr>
 		
 		<tr><td><b>BAV Rapide : </b></td><td><select name="BAVrap" >
 			<option value="0"> Non </option>
@@ -76,7 +76,7 @@ include("connexion_bd.php");
 			<option value="-1"> Oui </option>
 		</select></td></tr>
 		
-		<tr><td><b>Autres symptomes : </b></td><td><input name='autres_det'required></td></tr>
+		<tr><td><b>Autres symptomes : </b></td><td><input name='autres_det'></td></tr>
 		
 		<tr><td><b>Frottement occulaires : </b></td><td><select name="frott" >
 			<option value="0">Pas du tout</option>
@@ -109,7 +109,6 @@ include("connexion_bd.php");
 		
 		<br/><br/></br><input type = "submit" value = "Ajouter cette visite"/></br>
 
-		</br><i>Note : Tous les champs doivent être renseignés pour que la visite soit correctement ajoutée dans la base de données. </i><br/>
 
 	</fieldset>
 </form>
