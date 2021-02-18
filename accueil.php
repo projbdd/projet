@@ -1,4 +1,5 @@
 <?php  session_start(); ?>
+<!------ LYVIA MAGLOIRE pour le bandeau KLERVI LE GALL pour les liens vers patients et statistiques ------->
 
 <!DOCTYPE HTML>
 <html>
