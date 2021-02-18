@@ -146,9 +146,9 @@
 <div id = end_table>
 <table>
 <tr id = end_page>
-<td><a href = 'mes_patients.php'>Retour à la sélection du patient</a> </br></td>
-<td> &nbsp;&nbsp; </td>
 <td> <a href = 'patient2.php'>Retour à la page du patient</a></br> </td>
+<td> &nbsp;&nbsp; </td>
+<td><a href = 'mes_patients.php'>Retour à la sélection du patient</a> </br></td>
 </tr>
 </table>
 </div>
