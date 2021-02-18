@@ -11,9 +11,9 @@
 
 <body>
 
-<!-- Barre de navigation -->
+<!-- Partie du haut -->
 <div class="navbar">
-    <a href="deconnexion.php">Déconnexion</a>
+    <a href="motpasse_corrigé.html">Déconnexion</a>
     <div class="dropdown">
   </div>
 </div>
@@ -49,7 +49,7 @@
 
                         if ($req != null) {
                                                 
-                            echo "</br><h3> Nouvel utilisateur ".htmlspecialchars($_POST['prenomMed'])." ".htmlspecialchars($_POST['nomMed'])." rajouté avec succès. </h3";
+                            echo "</br><h3> Nouvel utilisateur ".htmlspecialchars($_POST['prenomMed'])." ".htmlspecialchars($_POST['nomMed'])." rajouté avec succès. </h3></br>";
                             echo "<a href='EspaceDataM.php'>Retour</a>";
                                                     
                         } else {

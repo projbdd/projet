@@ -13,7 +13,7 @@
 
 <!-- Barre de navigation -->
 <div class="navbar">
-    <a href="deconnexion.php">Déconnexion</a>
+    <a href="motpasse_corrigé.html">Déconnexion</a>
     <div class="dropdown">
   </div>
 </div>
@@ -77,7 +77,7 @@
             $ligne = $req -> fetch();
 
             if ($ligne) { // On vérifie que la requête s'effectue ...
-                if (htmlspecialchars($_POST['new']) == htmlspecialchars($_POST['old'])) { // ... et que la nouvelle fonction correspond à l'ancienne 
+                if (htmlspecialchars($_POST['new']) == htmlspecialchars($_POST['old'])) { // ... et que la nouvelle fonction ne soit pas identique à l'ancienne 
                         
                     echo "</br><h3> Veuillez modifier la fonction.</h3></br>";
                     echo '<a href = "EspaceDataM.php"/>Réessayer</a>';

@@ -12,7 +12,7 @@
 
 <!-- Barre de navigation -->
 <div class="navbar">
-    <a href="deconnexion.php">Déconnexion</a>
+    <a href="motpasse_corrigé.html">Déconnexion</a>
     <div class="dropdown">
   </div>
 </div>
@@ -42,7 +42,7 @@
 				$_SESSION['prenom'] = htmlspecialchars($message['Prenom']);
 
 				while($message) {
-					echo "</br> Modifier la fonction de ".$_SESSION['prenom']." ".$_SESSION['nom'].".</br></br>";
+					echo "</br><h3> Modifier la fonction de ".$_SESSION['prenom']." ".$_SESSION['nom'].".</h3></br>";
 					$message = $affiche -> fetch();
 
 					echo "<form method = 'POST' action = 'Update_user.php' >
@@ -81,7 +81,7 @@
 				$_SESSION['prenom'] = htmlspecialchars($message['Prenom']);
 
 				while($message) { 
-					echo "</br> Modifier le mot de passe de ".$_SESSION['prenom']." ".$_SESSION['nom'].".</br></br>";
+					echo "</br><h3> Modifier le mot de passe de ".$_SESSION['prenom']." ".$_SESSION['nom'].".</h3></br>";
 					$message = $affiche -> fetch();
 
 					echo "<form method = 'POST' action = 'Update_user.php' >
