@@ -108,6 +108,9 @@ include("connexion_bd.php");
 		</table>
 		
 		<br/><br/></br><input type = "submit" value = "Ajouter cette visite"/></br>
+
+		</br><i>Note : Tous les champs doivent être renseignés pour que la visite soit correctement ajoutée dans la base de données. </i><br/>
+
 	</fieldset>
 </form>
 
