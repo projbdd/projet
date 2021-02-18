@@ -1,5 +1,6 @@
 <?php session_start(); ?>
 <html>
+	<!-- KLERVI LE GALL -->
 	<head>
 		<meta charset="utf-8" />	
 		<title>Modifier une visite </title>
@@ -15,12 +16,14 @@ include("barr_navig.html");
 <div class = "main">
 <?php
 include("connexion_bd.php");
-
+//pour chaque variable on regarde si c'est celle là qui est choisie avec un if (isset)
+	
+	// partie suivi
 if(isset($_POST['VAL_typeconsult'])){	
-$requete = $bdd -> prepare('update tab_suivi set Type_consult = :p_valeur where N_dossier = :p_numdoss and Date = :p_date');
-$requete -> execute(array(':p_valeur' => $_POST['VAL_typeconsult'],
-						  ':p_numdoss'=> $_SESSION['numerodoss'],
-						  ':p_date'=> $_SESSION['jourvis']));
+$requete = $bdd -> prepare('update tab_suivi set Type_consult = :p_valeur where N_dossier = :p_numdoss and Date = :p_date'); // requete d'insertion
+$requete -> execute(array(':p_valeur' => $_POST['VAL_typeconsult'], //récupération de la valeur du formulaire
+						  ':p_numdoss'=> $_SESSION['numerodoss'], //numéro de patient
+						  ':p_date'=> $_SESSION['jourvis'])); // date de visite
   echo "<h2> Modification effectuée! </h2> ";
 }
 
@@ -143,9 +146,11 @@ $requete -> execute(array(':p_valeur' => $_POST['VAL_Nb_jrL_sem'],
 						  ':p_date'=> $_SESSION['jourvis']));
   echo "<h2> Modification effectuée! </h2> ";
 }
+	
+	// partie patient, la différence est qu'on ne récupère pas la date et on insère dans une table différente mais le principe est le même
 
 if(isset($_POST['VAL_nom'])){	 
-$requete = $bdd -> prepare('update tab_patient set Nom= :p_valeur where Num_dossier = :p_numdoss');
+$requete = $bdd -> prepare('update tab_patient set Nom= :p_valeur where Num_dossier = :p_numdoss'); 
 $requete -> execute(array(':p_valeur' => $_POST['VAL_nom'],
 						  ':p_numdoss'=> $_SESSION['numerodoss']));
   echo "<h2> Modification effectuée! </h2> ";
