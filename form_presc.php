@@ -61,7 +61,7 @@ $ligne = $req -> fetch();
         ?>
         </select></td></tr>
         
-        <tr><td><b>Autre nom : </b></td><td> <input name="autrep" type="text" required ></td></tr>
+        <tr><td><b>Autre nom : </b></td><td> <input name="autrep" type="text" ></td></tr>
 					
 		<tr><td><b>Rayon de courbure : </b></td><td><input name="ro_val"  type = "number" step="0.01" required></td></tr>
 		
@@ -69,13 +69,11 @@ $ligne = $req -> fetch();
 		
 		<tr><td><b>Puissance : </b></td><td><input name="puissance" type = "number" step="0.01" required></td></tr>
 		
-		<tr><td><b>Commentaire :</b></td><td> <textarea name="comment" rows="5" cols="20" required></textarea></td></tr>
+		<tr><td><b>Commentaire :</b></td><td> <textarea name="comment" rows="5" cols="20" ></textarea></td></tr>
 		</table>
 
 		<br/><br/></br><input type = "submit" value = "Ajouter cette prescription"/></br>
 		
-		</br><i>Note : Tous les champs doivent être renseignés pour que la prescription soit correctement ajoutée dans la base de données. </i><br/>
-
 		
 	</fieldset> 
 </form>
