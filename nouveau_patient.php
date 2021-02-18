@@ -27,77 +27,105 @@ $req -> execute();
 $numero = $req -> fetch();
 $_SESSION['nouveaunum'] = $numero['max']+0.00001;
 ?>
+
+
 <!-- Formulaire pour créer le nouveau patient-->
 <form method="POST" action="ajout_patient.php">
-	<fieldset><legend><h3>Ajout d'un nouveau patient</h3></legend>
+
+	<fieldset id = "connec" ><legend><h3>Ajout d'un nouveau patient</h3></legend>
+	
 		<!-- Affichage du numéro de patient que l'on a récupéré -->
 		<?php echo "Le nouveau patient portera le numéro : ".$_SESSION['nouveaunum'].".</br></br>"; ?>
-		Date du début du suivi : <input name='datedeb' type="datetime-local" required></br>
-		Nom : <input name='nom' required></br>
-		Prénom : <input name="pren" required></br>
-		Type d'adressage : <select name="adress">
+		
+		
+		<table id = connec1>	
+			
+		<tr><td><b> Date du début du suivi : </b></td><td><input name='datedeb' type="datetime-local" required></td></tr>
+		
+		<tr><td><b> Nom : </b></td><td><input name='nom' required></td></tr>
+		
+		<tr><td><b> Prénom : </b></td><td> <input name="pren" required></td></tr>
+		
+		<tr><td><b> Type d'adressage : </b></td><td> <select name="adress">
 			<option value="0">Non adressé</option>
 			<option value="1">Adressé par un généraliste</option>
 			<option value="2">Adressé par un spécialiste</option>
-		</select></br>
-		Type de consultation : <select name="consu">
+		</select></td></tr>
+
+		<tr><td><b> Type de consultation : </b></td><td> <select name="consu">
 			<option value="0">Premier diagnostic</option>
 			<option value="1">Premier avis</option>
 			<option value="2">Second ou énième avis</option>
-		</select></br>
-		Sexe : <select name="sexe">
+		</select></td></tr>
+		
+		<tr><td><b> Sexe : </b></td><td><select name="sexe">
 			<option value="1">Masculin</option>
 			<option value="2">Féminin</option>
-		</select></br>
-		Date de naissance : <input name='ddnaiss' type="datetime-local" required></br>
-		Catégorie socio-professionnelles : <select name="csp">
+		</select></td></tr>
+		
+		<tr><td><b> Date de naissance : </b></td><td> <input name='ddnaiss' type="datetime-local" required></td></tr>
+		
+		<tr><td><b> Catégorie socio-professionnelles : </b></td><td><select name="csp">
 			<option value="1">Agriculteurs indépendants</option>
-			<option value="2">Artisans, commerçants et chefs d'entreprise</option>
-			<option value="3">Cadres, professions libérales, professeurs, professions scientifiques et artistiques </option>
-			<option value="4">Professions intermédiaires de l'enseignement, de la santé et de la fonction publique, professions intermédiaires administratives et commerciales des entreprises, techniciens, contremaîtres, agents de maîtrise</option>
+			<option value="2">Artisans </option>
+			<option value="3">Cadres </option>
+			<option value="4">Professions intermédiaires </option>
 			<option value="5">Employés</option>
-			<option value="6">Ouvriers qualifiés, non qualifiés et agricoles </option>
+			<option value="6">Ouvriers  </option>
 			<option value="7">Retraités</option>
-		</select></br>
-		Ethnie : <select name="ethnie">
+		</select></td></tr>
+		
+		<tr><td><b> Ethnie : </b></td><td><select name="ethnie">
 			<option value="1">Caucasien</option>
 			<option value="2">Africain ou Afro-antillais</option>
 			<option value="3">Asiatique ou Indien</option>
 			<option value="4">Arabe</option>
 			<option value="5">Autre</option>
-		</select></br>
-		Commune ou pays de naissance : <input name="compays" required></br>
-		Année de la detection du keratocone : <input name="anneedete" type="number" min='0' value ="2010"></br>
-		Latéralité manuelle : <select name="lateralite">
+		</select></td></tr>
+		
+		<tr><td><b> Commune ou pays de naissance : </b></td><td><input name="compays" required></td></tr>
+		
+		<tr><td><b> Année de la detection du keratocone : </b></td><td><input name="anneedete" type="number" min='0' value ="2010"></td></tr>
+		
+		<tr><td><b> Latéralité manuelle : </b></td><td><select name="lateralite">
 			<option value="1">Droitier</option>
 			<option value="2">Gaucher</option>
 			<option value="3">Ambidextre</option>
-		</select></br>
-		Tabagisme actif : <select name="tabacact">
+		</select></td></tr>
+		
+		<tr><td><b>Tabagisme actif : </b></td><td><select name="tabacact">
 			<option value="1">Oui</option>
 			<option value="2">Non</option>
-		</select></br>
-		Nombre de cigarette fumées par jour : <input name="nbcigjour" type ="number" min='0' value ="0"></br>
-		Nombre d'année à fumer : <input name="nbcigannee" type ="number" min='0' value ="0"></br>
-		Tabagisme passif : <select name="tabacpass">
+		</select></td></tr>
+		
+		<tr><td><b>Nombre de cigarette fumées par jour : </b></td><td><input name="nbcigjour" type ="number" min='0' value ="0"></td></tr>
+		
+		<tr><td><b> Nombre d'année à fumer : </b></td><td><input name="nbcigannee" type ="number" min='0' value ="0"></td></tr>
+		
+		<tr><td><b> Tabagisme passif : </b></td><td><select name="tabacpass">
 			<option value="1">Oui</option>
 			<option value="2">Non</option>
-		</select></br>
-		Situation de l'oeil droit : <select name="KOD">
+		</select></td></tr>
+		
+		<tr><td><b> Situation de l'oeil droit : </b></td><td><select name="KOD">
 			<option value="1">Suspect</option>
 			<option value="2">Frustre</option>
 			<option value="3">Avérée</option>
-		</select></br>
-		Situation de l'oeil gauche : <select name="KOG">
+		</select></td></tr>
+		
+		<tr><td><b> Situation de l'oeil gauche : </b></td><td><select name="KOG">
 			<option value="1">Suspect</option>
 			<option value="2">Frustre</option>
 			<option value="3">Avérée</option>
-		</select></br></br>
+		</select></td></tr>
+		
+		</table>	
+			
 		<!-- Bouton pour valider l'ajout du patient -->
-		<input type = "submit" value = "Ajouter ce patient"/></br>
-<?php 
-	echo "</br><i>Note : Tous les champs doivent être renseignés pour que le patient soit correctement ajouté dans la base de données. </i><br/>";
-	?>
+		</br></br><input type = "submit" value = "Ajouter ce patient"/></br>
+
+	</br><i>Note : Tous les champs doivent être renseignés pour que le patient soit correctement ajouté dans la base de données. </i><br/>
+
 	</fieldset>
 </form>
 
