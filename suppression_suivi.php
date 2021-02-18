@@ -30,6 +30,13 @@ include("connexion_bd.php");
 ?>
 
 </div>
+<form method="POST" action="patient2.php">
+	<input id="bouton" type="submit" value="Choisir une autre date">
+</form>
 
+<form method="POST" action="mes_patients.php">
+	<input id="bouton" type="submit" value="Choisir un autre patient">
+</form>
+	
 </body>
 </html>
