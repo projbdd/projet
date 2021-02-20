@@ -195,10 +195,10 @@ h1 {
     font-weight: 400;
     line-height: 24px;
     margin-left: 4px;
-    max-width: 20%;
+    max-width: 60%;
     outline: none;
     text-align: inherit;
-    width: 100%;
+    width: fit-content;
     padding: 5px 5px;
 }
 
@@ -228,7 +228,4 @@ select > option[value=""] {
     display: none;
 }
 
-/* Mise en page de fieldsets */ 
-#fset {
- display:inline; 
-}
+
