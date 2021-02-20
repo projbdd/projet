@@ -13,7 +13,7 @@
 
 <!-- Partie du haut -->
 <div class="navbar">
-    <a href="motpasse_corrigé.html">Déconnexion</a>
+    <a href="deconnexion.php">Déconnexion</a>
     <div class="dropdown">
   </div>
 </div>
