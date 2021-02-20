@@ -39,6 +39,7 @@ if ($_SESSION['jourvis'] == "Visite initiale") {
 </form>
 </br>
 <?php 
+// possibilité de supprimer une visite uniquement si ce n'est pas la visite initiale
 if ($_SESSION['jourvis'] != "Visite initiale") {
 ?>
 <form method="POST" action="suppression_suivi.php">
