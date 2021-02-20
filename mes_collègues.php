@@ -18,10 +18,10 @@
 include("connexion_bd.php");
 
 
-// Requête qui ressort les utilisateurs autres que le DM et le médecin connecté
+// Requête qui ressort les utilisateurs médecins autres que le médecin connecté (et ceux qui ont n'ont plus accès au réseau)
 $req = $bdd -> prepare('SELECT * FROM tab_utilisateurs  
 WHERE NOT ID_prof = :ID_utilisateur
-AND NOT ID_prof = 999');
+	AND TYPE ="Med"');
 $req->execute(array(':ID_utilisateur' => $_SESSION['ID_utilisateur']));
 ?>
 
