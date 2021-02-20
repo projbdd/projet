@@ -38,11 +38,16 @@ if ($_SESSION['jourvis'] == "Visite initiale") {
 	<input id= "bouton" type="submit" value="Modifier des informations sur cette visite">
 </form>
 </br>
+<?php 
+if ($_SESSION['jourvis'] != "Visite initiale") {
+?>
 <form method="POST" action="suppression_suivi.php">
 	<input id = "bouton" type="submit" value="Supprimer cette visite">
 </form>
-
 </div>
+<?php 
+}
+?>
 
 </body>
 </html>
