@@ -1,4 +1,4 @@
-/* Page de connexion */
+/* Page de connexion (Lyvia) */
 #connec {
   margin : 0 auto;
   border: solid 2px;
@@ -20,7 +20,7 @@ h1 {
   text-align: center;
 }
 
-/* BARRE DE NAVIGATION */
+/* BARRE DE NAVIGATION (Lyvia) */
 	/* "Contenant" de la barre de navigation */
 	.navbar {
 	  overflow: hidden;
@@ -91,7 +91,7 @@ h1 {
 	  display: block;
 	}
 
-/* Page d'accueil */
+/* Page d'accueil (Klervi) */
 #table1 {
   vertical-align: middle;
   horizontal-align: middle;
@@ -100,7 +100,7 @@ h1 {
   margin: auto 
 }
 
-/* Page d'affichage des stats (Kler*/
+/* Page d'affichage des stats (Klervi) */
 #stats {
   vertical-align: middle;
 	horizontal-align: middle;
@@ -108,7 +108,7 @@ h1 {
   margin: auto;
   margin: auto }
 	
-/* Espace data manager */
+/* Espace Data Manager (Lyvia) */
 #DataM {
   
 }
@@ -119,7 +119,7 @@ h1 {
   margin-inline-end: inherit;
 }
 
-/* Page d'affichage des prescriptions */ 
+/* Page d'affichage des prescriptions (Lyvia) */ 
 #presc {
   margin : auto;
   width: 50%;
@@ -138,7 +138,7 @@ h1 {
   border-style: solid;      
 }
 
-/* Format affichage des antécédents */
+/* Format affichage des antécédents (Lyvia) */
 #atcd {
   width: 50%;
   border-style: solid;
@@ -155,7 +155,7 @@ h1 {
 }
 
 
-/* Page des médecins */
+/* Page des médecins (Grace) */
 
 #infoMed  {
   vertical-align: middle;
@@ -167,7 +167,7 @@ h1 {
 }
 
 
-/* Liens à la fin de la page  */
+/* Liens à la fin de la page (Grace) */
 #end_table {
 	position: absolute;
 	bottom: 0;
@@ -182,7 +182,7 @@ h1 {
 }
 
 
-/* Mise en pages des listes déroulantes */
+/* Mise en pages des listes déroulantes (Grace) */
 
 #selectbox {
     background-color: transparent;
@@ -202,7 +202,7 @@ h1 {
     padding: 5px 5px;
 }
 
-/* Mise en page des boutons */
+/* Mise en page des boutons (Grace) */
 
 #bouton 
 {
@@ -223,7 +223,7 @@ h1 {
     
 }
 
-/* N'affiche plus les options vides dans les listes déroulantes */ 
+/* N'affiche plus les options vides dans les listes déroulantes (Grace) */ 
 select > option[value=""] {
     display: none;
 }
